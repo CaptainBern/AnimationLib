@@ -98,7 +98,7 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet17EntityLocation");
+				Packet packet = new Packet("Packet17EntityLocationAction");
 				packet.setValue("a", player.getEntityId());
 				packet.setValue("e", 0);
 				packet.setValue("b", (int) player.getLocation().getX());

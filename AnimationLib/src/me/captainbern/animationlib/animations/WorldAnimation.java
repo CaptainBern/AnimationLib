@@ -3,6 +3,7 @@ package me.captainbern.animationlib.animations;
 import java.util.Arrays;
 import java.util.Collection;
 
+import me.captainbern.animationlib.event.WorldAnimationEvent;
 import me.captainbern.animationlib.utils.Packet;
 
 import org.bukkit.Bukkit;
@@ -94,11 +95,11 @@ public enum WorldAnimation {
 				packet.setValue("b", (float) loc.getX());
 				packet.setValue("c", (float) loc.getYaw());
 				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setValue("e", (float) offsetX);
+				packet.setValue("f", (float) offsetY);
+				packet.setValue("g", (float) offsetZ);
+				packet.setValue("h", (float) speed);
+				packet.setValue("i", (int) ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -815,12 +816,12 @@ public enum WorldAnimation {
 			if(player == null || player.getWorld() != world){
 				continue;
 			}
-			//PlayerAnimationEvent event = new PlayerAnimationEvent(player, pa);
-			//Bukkit.getPluginManager().callEvent(event);
-			//if(!event.isCancelled()){
+			WorldAnimationEvent event = new WorldAnimationEvent(loc.getWorld(), wa);
+			Bukkit.getPluginManager().callEvent(event);
+			if(!event.isCancelled()){
 				for(Packet packet : packets){
 					packet.send(player);
-				//}
+				}
 			}
 		}
 	}
