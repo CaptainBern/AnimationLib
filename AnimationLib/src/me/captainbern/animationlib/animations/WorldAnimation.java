@@ -15,9 +15,9 @@ public enum WorldAnimation {
 	
 	HUGE_EXPLOSION {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
-
+				                      
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setValue("a", "hugeexplosion");
 				packet.setValue("b", (float) loc.getX());
@@ -39,7 +39,7 @@ public enum WorldAnimation {
 	},
 	LARGE_EXPLODE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -63,11 +63,11 @@ public enum WorldAnimation {
 	},
 	FIREWORK_SPARK {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "fireworkSpark");
+				packet.setValue("a", "fireworksSpark");
 				packet.setValue("b", (float) loc.getX());
 				packet.setValue("c", (float) loc.getYaw());
 				packet.setValue("d", (float) loc.getZ());
@@ -87,7 +87,7 @@ public enum WorldAnimation {
 	},
 	BUBBLE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -111,7 +111,7 @@ public enum WorldAnimation {
 	},
 	SUSPENDED {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -135,7 +135,7 @@ public enum WorldAnimation {
 	},
 	DEPHT_SUSPEND {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -159,7 +159,7 @@ public enum WorldAnimation {
 	},
 	TOWN_AURA {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -183,7 +183,7 @@ public enum WorldAnimation {
 	},
 	CRIT {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -207,7 +207,7 @@ public enum WorldAnimation {
 	},
 	MAGIC_CRIT {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -231,7 +231,7 @@ public enum WorldAnimation {
 	},
 	SMOKE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -255,7 +255,7 @@ public enum WorldAnimation {
 	},
 	MOBSPELL {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -279,7 +279,7 @@ public enum WorldAnimation {
 	},
 	MOBSPELL_AMBIENT {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -303,7 +303,7 @@ public enum WorldAnimation {
 	},
 	SPELL {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -327,7 +327,7 @@ public enum WorldAnimation {
 	},
 	INSTANT_SPELL {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -351,7 +351,7 @@ public enum WorldAnimation {
 	},
 	WITCH_MAGIC {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -375,7 +375,7 @@ public enum WorldAnimation {
 	},
 	NOTE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -399,7 +399,7 @@ public enum WorldAnimation {
 	},
 	PORTAL {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -423,7 +423,7 @@ public enum WorldAnimation {
 	},
 	ENCHANTMENT_TABLE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -447,7 +447,7 @@ public enum WorldAnimation {
 	},
 	EXPLODE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -471,7 +471,7 @@ public enum WorldAnimation {
 	},
 	FLAME {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -495,7 +495,7 @@ public enum WorldAnimation {
 	},
 	LAVA {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -519,7 +519,7 @@ public enum WorldAnimation {
 	},
 	FOOTSTEP {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -543,7 +543,7 @@ public enum WorldAnimation {
 	},
 	LARGE_SMOKE {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -567,7 +567,7 @@ public enum WorldAnimation {
 	},
 	CLOUD {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -591,7 +591,7 @@ public enum WorldAnimation {
 	},
 	RED_DUST {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -615,7 +615,7 @@ public enum WorldAnimation {
 	},
 	SNOWBALL_POOF {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -639,7 +639,7 @@ public enum WorldAnimation {
 	},
 	DRIP_WATER {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -663,7 +663,7 @@ public enum WorldAnimation {
 	},
 	DRIP_LAVA {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -687,7 +687,7 @@ public enum WorldAnimation {
 	},
 	SNOW_SHOVEL {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -711,7 +711,7 @@ public enum WorldAnimation {
 	},
 	SLIME {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -735,7 +735,7 @@ public enum WorldAnimation {
 	},
 	HEART {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -759,7 +759,7 @@ public enum WorldAnimation {
 	},
 	ANGRY_VILLAGER {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -783,7 +783,7 @@ public enum WorldAnimation {
 	},
 	HAPPY_VILLAGER {
 		@Override
-		protected void broadcastAnimation(Location loc, int speed, int ammount, int offsetX, int offsetY, int offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
@@ -806,7 +806,7 @@ public enum WorldAnimation {
 		}
 	},;
 	
-	public void play(Location loc, int speed, int ammount, int offX, int offY, int offZ){
+	public void play(Location loc, float speed, int ammount, float offX, float offY, float offZ){
 		broadcastAnimation(loc, speed, ammount, offX, offY, offZ);
 	}
 
@@ -826,7 +826,7 @@ public enum WorldAnimation {
 		}
 	}
 
-	protected void broadcastAnimation(Location loc, int speed, int ammount, int offX, int offY, int offZ){
+	protected void broadcastAnimation(Location loc, float speed, int ammount, float offX, float offY, float offZ){
 		throw new UnsupportedOperationException("unimplemented animation");
 	}
 
