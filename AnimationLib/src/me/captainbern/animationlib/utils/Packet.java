@@ -23,7 +23,7 @@ import java.lang.reflect.Field;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class Packet {
+public class Packet extends Object{
 
 	private Object crafted_packet = null;
 
