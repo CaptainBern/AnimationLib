@@ -35,7 +35,7 @@ public class Packet extends Object{
 		}
 	}
 
-	public void setValue(String field, Object value){
+	public void setPublicValue(String field, Object value){
 		try {
 			Field f = crafted_packet.getClass().getField(field);
 			f.setAccessible(true);
@@ -44,7 +44,17 @@ public class Packet extends Object{
 			e.printStackTrace();
 		}
 	}
-	
+
+	public void setPrivateValue(String field, Object value){
+		try {
+			Field f = crafted_packet.getClass().getDeclaredField(field);
+			f.setAccessible(true);
+			f.set(crafted_packet, value);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void send(Player player){
 		try {
 			Object entityPlayer = ReflectionUtil.getMethod("getHandle", player.getClass(), 0).invoke(player);
