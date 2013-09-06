@@ -37,8 +37,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setValue("a", player.getEntityId());
-				packet.setValue("b", 1);
+				packet.setPublicValue("a", player.getEntityId());
+				packet.setPublicValue("b", 1);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -53,8 +53,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setValue("a", player.getEntityId());
-				packet.setValue("b", 6);
+				packet.setPublicValue("a", player.getEntityId());
+				packet.setPublicValue("b", 6);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -69,8 +69,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setValue("a", player.getEntityId());
-				packet.setValue("b", 2);
+				packet.setPublicValue("a", player.getEntityId());
+				packet.setPublicValue("b", 2);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -85,8 +85,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet70Bed");
-				packet.setValue("c", player.getEntityId());
-				packet.setValue("b", 3);
+				packet.setPublicValue("c", player.getEntityId());
+				packet.setPublicValue("b", 3);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -101,8 +101,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setValue("a", player.getEntityId());
-				packet.setValue("b", 7);
+				packet.setPublicValue("a", player.getEntityId());
+				packet.setPublicValue("b", 7);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -117,11 +117,11 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet17EntityLocationAction");
-				packet.setValue("a", player.getEntityId());
-				packet.setValue("e", 0);
-				packet.setValue("b", (int) player.getLocation().getX());
-				packet.setValue("c", (int) player.getLocation().getY());
-				packet.setValue("d", (int) player.getLocation().getZ());
+				packet.setPublicValue("a", player.getEntityId());
+				packet.setPublicValue("e", 0);
+				packet.setPublicValue("b", (int) player.getLocation().getX());
+				packet.setPublicValue("c", (int) player.getLocation().getY());
+				packet.setPublicValue("d", (int) player.getLocation().getZ());
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -137,8 +137,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setValue("a", player.getEntityId());
-				packet.setValue("b", 3);
+				packet.setPublicValue("a", player.getEntityId());
+				packet.setPublicValue("b", 3);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -153,8 +153,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet70Bed");
-				packet.setValue("c", player.getEntityId());
-				packet.setValue("b", 1);
+				packet.setPublicValue("c", player.getEntityId());
+				packet.setPublicValue("b", 1);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -169,8 +169,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet70Bed");
-				packet.setValue("c", player.getEntityId());
-				packet.setValue("b", 2);
+				packet.setPublicValue("c", player.getEntityId());
+				packet.setPublicValue("b", 2);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -185,8 +185,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet70Bed");
-				packet.setValue("c", player.getEntityId());
-				packet.setValue("b", 4);
+				packet.setPublicValue("c", player.getEntityId());
+				packet.setPublicValue("b", 4);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -201,8 +201,8 @@ public enum PlayerAnimation {
 			try {
 
 				Packet packet = new Packet("Packet70Bed");
-				packet.setValue("c", player.getEntityId());
-				packet.setValue("b", 3);
+				packet.setPublicValue("c", player.getEntityId());
+				packet.setPublicValue("b", 3);
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
