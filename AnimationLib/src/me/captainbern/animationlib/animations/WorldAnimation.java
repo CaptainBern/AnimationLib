@@ -37,15 +37,15 @@ public enum WorldAnimation {
 			try {
 				                      
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "hugeexplosion");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "hugeexplosion");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -61,15 +61,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "largeexplode");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "largeexplode");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -85,15 +85,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "fireworksSpark");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "fireworksSpark");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -109,15 +109,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "bubble");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", (float) offsetX);
-				packet.setValue("f", (float) offsetY);
-				packet.setValue("g", (float) offsetZ);
-				packet.setValue("h", (float) speed);
-				packet.setValue("i", (int) ammount);
+				packet.setPrivateValue("a", "bubble");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", (float) offsetX);
+				packet.setPrivateValue("f", (float) offsetY);
+				packet.setPrivateValue("g", (float) offsetZ);
+				packet.setPrivateValue("h", (float) speed);
+				packet.setPrivateValue("i", (int) ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -133,15 +133,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "suspended");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "suspended");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -157,15 +157,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "dephtsuspend");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "dephtsuspend");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -181,15 +181,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "townaura");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "townaura");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -205,15 +205,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "crit");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "crit");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -229,15 +229,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "magicCrit");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "magicCrit");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -253,15 +253,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "smoke");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "smoke");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -277,15 +277,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "mobSpell");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "mobSpell");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -301,15 +301,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "mobSpellAmbient");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "mobSpellAmbient");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -325,15 +325,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "spell");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "spell");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -349,15 +349,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "instantSpell");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "instantSpell");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -373,15 +373,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "witchMagic");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "witchMagic");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -397,15 +397,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "note");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "note");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -421,15 +421,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "portal");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "portal");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -445,15 +445,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "enchantmenttable");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "enchantmenttable");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -469,15 +469,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "explode");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "explode");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -493,15 +493,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "flame");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "flame");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -517,15 +517,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "lava");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "lava");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -541,15 +541,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "footstep");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "footstep");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -565,15 +565,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "largesmoke");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "largesmoke");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -589,15 +589,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "cloud");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "cloud");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -613,15 +613,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "reddust");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "reddust");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -637,15 +637,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "snowballpoof");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "snowballpoof");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -661,15 +661,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "dripWater");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "dripWater");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -685,15 +685,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "dripLava");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "dripLava");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -709,15 +709,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "snowshovel");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "snowshovel");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -733,15 +733,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "slime");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "slime");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -757,15 +757,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "heart");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "heart");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -781,15 +781,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "angryVillager");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "angryVillager");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -805,15 +805,15 @@ public enum WorldAnimation {
 			try {
 
 				Packet packet = new Packet("Packet63WorldParticles");
-				packet.setValue("a", "happyVillager");
-				packet.setValue("b", (float) loc.getX());
-				packet.setValue("c", (float) loc.getYaw());
-				packet.setValue("d", (float) loc.getZ());
-				packet.setValue("e", offsetX);
-				packet.setValue("f", offsetY);
-				packet.setValue("g", offsetZ);
-				packet.setValue("h", speed);
-				packet.setValue("i", ammount);
+				packet.setPrivateValue("a", "happyVillager");
+				packet.setPrivateValue("b", (float) loc.getX());
+				packet.setPrivateValue("c", (float) loc.getY());
+				packet.setPrivateValue("d", (float) loc.getZ());
+				packet.setPrivateValue("e", offsetX);
+				packet.setPrivateValue("f", offsetY);
+				packet.setPrivateValue("g", offsetZ);
+				packet.setPrivateValue("h", speed);
+				packet.setPrivateValue("i", ammount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
