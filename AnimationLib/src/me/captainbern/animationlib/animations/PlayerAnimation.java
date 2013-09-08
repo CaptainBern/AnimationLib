@@ -18,11 +18,13 @@
 
 package me.captainbern.animationlib.animations;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
 import me.captainbern.animationlib.utils.Packet;
+import me.captainbern.animationlib.utils.ReflectionUtil;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -211,43 +213,20 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	/*SIT {
+	SIT {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
 
 				Object entityPlayer = ReflectionUtil.BukkitPlayerToEntityPlayer(player);
 
-				Packet mob = new Packet("Packet24MobSpawn");
-				mob.setValue("a", 12345);
-				mob.setValue("b", (byte) EntityType.HORSE.getTypeId());
-				mob.setValue("c", player.getLocation().getX());
-				mob.setValue("d", player.getLocation().getX());
-				mob.setValue("e", player.getLocation().getX());
-				mob.setValue("f", 0);
-				mob.setValue("g", 0);
-				mob.setValue("h", null);
-				mob.setValue("i", 0);
-				mob.setValue("j", 0);
-				mob.setValue("k", 0);
-
-				Object watcher = ReflectionUtil.getNMSClass("DataWatcher");
-				Method a = ReflectionUtil.getMethod("a", watcher.getClass(), 2);
-				a.setAccessible(true);
-				a.invoke(watcher, 0, (byte)0x20);
-				a.invoke(watcher, 6, (Float) (float) 10);
-				a.invoke(watcher, 7, (Integer) (int) 0);
-				a.invoke(watcher, 8, (Byte) (byte) 0);
-				a.invoke(watcher, 10, (String) "awesome_chair");
-				a.invoke(watcher, 11, (Byte) (byte) 1);
-				mob.setValue("t", watcher);
-
-				Packet packet = new Packet("Packet39AttachEntity");
-				packet.setValue("a", 0);
-				packet.setValue("b", player.getEntityId());
-				packet.setValue("c", 12345);
+				Packet packet = new Packet("Packet40EntityMetadata");
+				packet.setPublicValue("a", player.getEntityId());
+				Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
+				packet.setPrivateValue("b", datawatcher.getClass().getMethod("c").invoke(datawatcher));
 				
-				Collection<Packet> packets = Arrays.asList(mob , packet);
+				
+				Collection<Packet> packets = Arrays.asList(packet);
 
 				sendPacketNearby(player.getLocation(), packets, this);
 
@@ -262,17 +241,24 @@ public enum PlayerAnimation {
 			player.mount(null);
 		}
 	},*/
-	/*SNEAK {
+	SNEAK {
+		@SuppressWarnings("unchecked")
 		@Override
 		protected void broadcastAnimation(Player player) {
 			player.setSneaking(true);
 			try {
+				
+				Object entityPlayer = ReflectionUtil.BukkitPlayerToEntityPlayer(player);
 				player.setSneaking(true);
 				Packet packet = new Packet("Packet40EntityMetadata");
-				packet.setValue("a", player.getEntityId());
-				DataWatcherUtil dw = new DataWatcherUtil((byte) 4);
-				packet.setValue("b", dw.c());
-				sendPacketNearby(player.getLocation(), packet);
+				packet.setPublicValue("a", player.getEntityId());
+				//DataWatcherUtil dw = new DataWatcherUtil((byte) 4);
+				Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
+				@SuppressWarnings("rawtypes")
+				ArrayList list = (ArrayList) datawatcher.getClass().getMethod("c").invoke(datawatcher);
+				list.set(0, (byte) 4);
+				packet.setPrivateValue("b", list);
+				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
 				Bukkit.getLogger().warning("[PlayerAnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet! (SNEAK)");
