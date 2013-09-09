@@ -18,13 +18,11 @@
 
 package me.captainbern.animationlib.animations;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
 import me.captainbern.animationlib.utils.Packet;
-import me.captainbern.animationlib.utils.ReflectionUtil;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -213,7 +211,7 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	SIT {
+	/*SIT {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
@@ -241,7 +239,7 @@ public enum PlayerAnimation {
 			player.mount(null);
 		}
 	},*/
-	SNEAK {
+	/*SNEAK {
 		@SuppressWarnings("unchecked")
 		@Override
 		protected void broadcastAnimation(Player player) {
