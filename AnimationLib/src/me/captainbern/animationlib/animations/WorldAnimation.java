@@ -33,8 +33,12 @@ public enum WorldAnimation {
 	
 	HUGE_EXPLOSION {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 				                      
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "hugeexplosion");
@@ -45,7 +49,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -57,8 +61,12 @@ public enum WorldAnimation {
 	},
 	LARGE_EXPLODE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "largeexplode");
@@ -69,7 +77,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -81,8 +89,12 @@ public enum WorldAnimation {
 	},
 	FIREWORK_SPARK {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "fireworksSpark");
@@ -93,7 +105,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -105,8 +117,12 @@ public enum WorldAnimation {
 	},
 	BUBBLE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "bubble");
@@ -117,7 +133,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", (float) offsetY);
 				packet.setPrivateValue("g", (float) offsetZ);
 				packet.setPrivateValue("h", (float) speed);
-				packet.setPrivateValue("i", (int) ammount);
+				packet.setPrivateValue("i", (int) amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -129,8 +145,12 @@ public enum WorldAnimation {
 	},
 	SUSPENDED {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "suspended");
@@ -141,7 +161,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -153,8 +173,12 @@ public enum WorldAnimation {
 	},
 	DEPHT_SUSPEND {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "dephtsuspend");
@@ -165,7 +189,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -177,8 +201,12 @@ public enum WorldAnimation {
 	},
 	TOWN_AURA {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "townaura");
@@ -189,7 +217,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -201,8 +229,12 @@ public enum WorldAnimation {
 	},
 	CRIT {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "crit");
@@ -213,7 +245,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -225,8 +257,12 @@ public enum WorldAnimation {
 	},
 	MAGIC_CRIT {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "magicCrit");
@@ -237,7 +273,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -249,8 +285,12 @@ public enum WorldAnimation {
 	},
 	SMOKE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "smoke");
@@ -261,7 +301,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -273,8 +313,12 @@ public enum WorldAnimation {
 	},
 	MOBSPELL {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "mobSpell");
@@ -285,7 +329,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -297,8 +341,12 @@ public enum WorldAnimation {
 	},
 	MOBSPELL_AMBIENT {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "mobSpellAmbient");
@@ -309,7 +357,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -321,8 +369,12 @@ public enum WorldAnimation {
 	},
 	SPELL {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "spell");
@@ -333,7 +385,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -345,8 +397,12 @@ public enum WorldAnimation {
 	},
 	INSTANT_SPELL {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "instantSpell");
@@ -357,7 +413,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -369,8 +425,12 @@ public enum WorldAnimation {
 	},
 	WITCH_MAGIC {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "witchMagic");
@@ -381,7 +441,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -393,8 +453,12 @@ public enum WorldAnimation {
 	},
 	NOTE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "note");
@@ -405,7 +469,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -417,8 +481,12 @@ public enum WorldAnimation {
 	},
 	PORTAL {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "portal");
@@ -429,7 +497,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -441,8 +509,12 @@ public enum WorldAnimation {
 	},
 	ENCHANTMENT_TABLE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "enchantmenttable");
@@ -453,7 +525,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -465,8 +537,12 @@ public enum WorldAnimation {
 	},
 	EXPLODE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "explode");
@@ -477,7 +553,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -489,8 +565,12 @@ public enum WorldAnimation {
 	},
 	FLAME {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "flame");
@@ -501,7 +581,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -513,8 +593,12 @@ public enum WorldAnimation {
 	},
 	LAVA {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "lava");
@@ -525,7 +609,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -537,8 +621,12 @@ public enum WorldAnimation {
 	},
 	FOOTSTEP {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "footstep");
@@ -549,7 +637,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -561,8 +649,12 @@ public enum WorldAnimation {
 	},
 	LARGE_SMOKE {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "largesmoke");
@@ -573,7 +665,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -585,8 +677,12 @@ public enum WorldAnimation {
 	},
 	CLOUD {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "cloud");
@@ -597,7 +693,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -609,8 +705,12 @@ public enum WorldAnimation {
 	},
 	RED_DUST {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "reddust");
@@ -621,7 +721,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -633,8 +733,12 @@ public enum WorldAnimation {
 	},
 	SNOWBALL_POOF {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "snowballpoof");
@@ -645,7 +749,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -657,8 +761,12 @@ public enum WorldAnimation {
 	},
 	DRIP_WATER {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "dripWater");
@@ -669,7 +777,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -681,8 +789,12 @@ public enum WorldAnimation {
 	},
 	DRIP_LAVA {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "dripLava");
@@ -693,7 +805,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -705,8 +817,12 @@ public enum WorldAnimation {
 	},
 	SNOW_SHOVEL {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "snowshovel");
@@ -717,7 +833,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -729,8 +845,12 @@ public enum WorldAnimation {
 	},
 	SLIME {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "slime");
@@ -741,7 +861,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -753,8 +873,12 @@ public enum WorldAnimation {
 	},
 	HEART {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "heart");
@@ -765,7 +889,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -777,8 +901,12 @@ public enum WorldAnimation {
 	},
 	ANGRY_VILLAGER {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "angryVillager");
@@ -789,7 +917,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -801,8 +929,12 @@ public enum WorldAnimation {
 	},
 	HAPPY_VILLAGER {
 		@Override
-		protected void broadcastAnimation(Location loc, float speed, int ammount, float offsetX, float offsetY, float offsetZ) {
+		protected void broadcastAnimation(Location loc, float speed, int amount, float offsetX, float offsetY, float offsetZ) {
 			try {
+				
+				if (amount < 1) {
+	                throw new IllegalArgumentException("[AnimationLib] Amount param must be greater then 0!");
+	            }
 
 				Packet packet = new Packet("Packet63WorldParticles");
 				packet.setPrivateValue("a", "happyVillager");
@@ -813,7 +945,7 @@ public enum WorldAnimation {
 				packet.setPrivateValue("f", offsetY);
 				packet.setPrivateValue("g", offsetZ);
 				packet.setPrivateValue("h", speed);
-				packet.setPrivateValue("i", ammount);
+				packet.setPrivateValue("i", amount);
 				
 				sendPacketNearby(loc, Arrays.asList(packet), this);
 
@@ -824,8 +956,8 @@ public enum WorldAnimation {
 		}
 	},;
 	
-	public void play(Location loc, float speed, int ammount, float offX, float offY, float offZ){
-		broadcastAnimation(loc, speed, ammount, offX, offY, offZ);
+	public void play(Location loc, float speed, int amount, float offX, float offY, float offZ){
+		broadcastAnimation(loc, speed, amount, offX, offY, offZ);
 	}
 
 	private static void sendPacketNearby(Location loc, Collection<Packet> packets, WorldAnimation wa) {
@@ -844,8 +976,8 @@ public enum WorldAnimation {
 		}
 	}
 
-	protected void broadcastAnimation(Location loc, float speed, int ammount, float offX, float offY, float offZ){
-		throw new UnsupportedOperationException("unimplemented animation");
+	protected void broadcastAnimation(Location loc, float speed, int amount, float offX, float offY, float offZ){
+		throw new UnsupportedOperationException("[AnimationLib] Unimplemented animation");
 	}
 
 }

@@ -79,7 +79,7 @@ public enum BlockAnimation {
 	}
 
 	protected void broadcastAnimation(Block block, short damage){
-		throw new UnsupportedOperationException("unimplemented animation");
+		throw new UnsupportedOperationException("[AnimationLib] Unimplemented animation");
 	}
 
 }
