@@ -27,6 +27,11 @@ public class Packet extends Object{
 
 	private Object crafted_packet = null;
 
+	/**
+	 * This is a little class that makes it possible for me 
+	 * to easily craft/send packets. It has been created with the
+	 * aim to make it as easy as possible.
+	 */
 	public Packet(String name){
 		try {
 			crafted_packet = ReflectionUtil.getNMSClass(name);
@@ -35,6 +40,9 @@ public class Packet extends Object{
 		}
 	}
 
+	/**
+	 * Sets a public field value of a class/packet.
+	 */
 	public void setPublicValue(String field, Object value){
 		try {
 			Field f = crafted_packet.getClass().getField(field);
@@ -45,6 +53,9 @@ public class Packet extends Object{
 		}
 	}
 
+	/**
+	 * Sets a private field value of a class/packet.
+	 */
 	public void setPrivateValue(String field, Object value){
 		try {
 			Field f = crafted_packet.getClass().getDeclaredField(field);
@@ -55,6 +66,9 @@ public class Packet extends Object{
 		}
 	}
 
+	/**
+	 * Method used to send the packet to specified player.
+	 */
 	public void send(Player player){
 		try {
 			Object entityPlayer = ReflectionUtil.getMethod("getHandle", player.getClass(), 0).invoke(player);
