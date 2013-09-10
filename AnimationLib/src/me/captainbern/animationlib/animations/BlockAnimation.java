@@ -37,7 +37,7 @@ public enum BlockAnimation {
 		protected void broadcastAnimation(Block block, short damage) {
 			try{
 
-				if(damage > 7 || damage > 0){
+				if(damage > 7 || damage < 0){
 					throw new NumberFormatException("damage needs to be between 0 and 7!");
 				}
 				
