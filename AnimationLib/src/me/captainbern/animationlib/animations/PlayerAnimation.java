@@ -22,7 +22,9 @@ import java.util.Arrays;
 import java.util.Collection;
 
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
+import me.captainbern.animationlib.utils.DataWatcher;
 import me.captainbern.animationlib.utils.Packet;
+import me.captainbern.animationlib.utils.ReflectionUtil;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -239,41 +241,72 @@ public enum PlayerAnimation {
 			player.mount(null);
 		}
 	},*/
-	/*SNEAK {
-		@SuppressWarnings("unchecked")
+	INVISIBLE {
 		@Override
 		protected void broadcastAnimation(Player player) {
-			player.setSneaking(true);
 			try {
-				
-				Object entityPlayer = ReflectionUtil.BukkitPlayerToEntityPlayer(player);
-				player.setSneaking(true);
+
 				Packet packet = new Packet("Packet40EntityMetadata");
 				packet.setPublicValue("a", player.getEntityId());
-				//DataWatcherUtil dw = new DataWatcherUtil((byte) 4);
-				Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
-				@SuppressWarnings("rawtypes")
-				ArrayList list = (ArrayList) datawatcher.getClass().getMethod("c").invoke(datawatcher);
-				list.set(0, (byte) 4);
-				packet.setPrivateValue("b", list);
+				
+				DataWatcher data = new DataWatcher();
+				data.write(0, (Object) (byte) 0x20);
+				data.write(1, (Object) (short) 0);
+				data.write(8, (Object) (byte) 0);
+				
+				packet.setPrivateValue("b", ReflectionUtil.getMethod("c", data.getDataWatcherObject().getClass()).invoke(data.getDataWatcherObject()));
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[PlayerAnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet! (SNEAK)");
+				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
 	},
-	/*STOP_SNEAKING {
+	VISIBLE {
 		@Override
 		protected void broadcastAnimation(Player player) {
-			player.getBukkitEntity().setSneaking(false);
-			sendPacketNearby(new Packet40EntityMetadata(player.id, player.getDataWatcher(), true), player, radius);
+			try {
+
+				Packet packet = new Packet("Packet40EntityMetadata");
+				packet.setPublicValue("a", player.getEntityId());
+				
+				DataWatcher data = new DataWatcher();
+				data.write(0, (Object) (byte) 0);
+				data.write(1, (Object) (short) 0);
+				data.write(8, (Object) (byte) 0);
+				
+				packet.setPrivateValue("b", ReflectionUtil.getMethod("c", data.getDataWatcherObject().getClass()).invoke(data.getDataWatcherObject()));
+				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
+
+			} catch (Exception e) {
+				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
+				e.printStackTrace();
+			}
 		}
-	}*/;
-	/*
-	 * You can look again
-	 */
+	},
+	ON_FIRE {
+		@Override
+		protected void broadcastAnimation(Player player) {
+			try {
+
+				Packet packet = new Packet("Packet40EntityMetadata");
+				packet.setPublicValue("a", player.getEntityId());
+				
+				DataWatcher data = new DataWatcher();
+				data.write(0, (Object) (byte) 0x01);
+				data.write(1, (Object) (short) 0);
+				data.write(8, (Object) (byte) 0);
+				
+				packet.setPrivateValue("b", ReflectionUtil.getMethod("c", data.getDataWatcherObject().getClass()).invoke(data.getDataWatcherObject()));
+				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
+
+			} catch (Exception e) {
+				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + "), this girl isn't on fire!");
+				e.printStackTrace();
+			}
+		}
+	};
 
 	/* STOP ENUMS */
 
