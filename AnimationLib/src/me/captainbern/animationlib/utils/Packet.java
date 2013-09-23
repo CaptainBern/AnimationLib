@@ -65,6 +65,13 @@ public class Packet extends Object{
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * Return the packet-object you're working with.
+	 */
+	public Object getPacketObject(){
+		return this.crafted_packet;
+	}
 
 	/**
 	 * Method used to send the packet to specified player.
