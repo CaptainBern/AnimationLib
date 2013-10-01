@@ -50,7 +50,7 @@ public enum BlockAnimation {
 				sendPacketNearby(block.getLocation(), Arrays.asList(packet), this, block);
 
 			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong shile crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
+				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
 				e.printStackTrace();
 			}
 		}
