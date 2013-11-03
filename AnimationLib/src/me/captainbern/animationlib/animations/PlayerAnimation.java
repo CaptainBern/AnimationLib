@@ -220,7 +220,7 @@ public enum PlayerAnimation {
 
 				Object entityPlayer = ReflectionUtil.BukkitPlayerToEntityPlayer(player);
                                 Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
-                                Class c = ReflectionUtil.getNMSClass("Packet40EntityMetadata", int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class)
+                                Class c = ReflectionUtil.getNMSClass("Packet40EntityMetadata", int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class);
 
 				Packet packet = c.getConstructor(int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class).newInstance(player.getEntityId(), datawatcher.getClass().getMethod("c").invoke(datawatcher)), true);				
 				
