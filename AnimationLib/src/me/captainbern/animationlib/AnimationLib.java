@@ -27,7 +27,7 @@ public class AnimationLib extends JavaPlugin {
 	}
 	
 	/**
-	 * Used when players would activate this trough concole or something
+	 * Used when players would activate this through console or something
 	 */
 	public static void main(String[] args){
 		System.out.print("This is a library for Bukkit, place it in your plugins folder!");
