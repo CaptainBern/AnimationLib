@@ -320,7 +320,7 @@ public enum PlayerAnimation {
 			}
 			PlayerAnimationEvent event = new PlayerAnimationEvent(player, pa);
 			Bukkit.getPluginManager().callEvent(event);
-			if(!event.isCancelled()){
+			if(!event.isCancelled()) {
 				for(Packet packet : packets){
 					packet.send(player);
 				}
