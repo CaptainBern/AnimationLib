@@ -38,7 +38,7 @@ public enum BlockAnimation {
 			try{
 
 				if(damage > 7 || damage < 0){
-					throw new NumberFormatException("damage needs to be between 0 and 7!");
+					throw new NumberFormatException("Damage needs to be between 0 and 7!");
 				}
 				
 				Packet packet = new Packet("Packet55BlockBreakAnimation");
