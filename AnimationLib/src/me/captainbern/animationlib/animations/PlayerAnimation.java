@@ -213,18 +213,16 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	/*SIT {
+	SIT {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
 
 				Object entityPlayer = ReflectionUtil.BukkitPlayerToEntityPlayer(player);
+                                Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
+                                Class c = ReflectionUtil.getNMSClass("Packet40EntityMetadata", int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class)
 
-				Packet packet = new Packet("Packet40EntityMetadata");
-				packet.setPublicValue("a", player.getEntityId());
-				Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
-				packet.setPrivateValue("b", datawatcher.getClass().getMethod("c").invoke(datawatcher));
-				
+				Packet packet = c.getConstructor(int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class).newInstance(player.getEntityId(), datawatcher.getClass().getMethod("c").invoke(datawatcher)), true);				
 				
 				Collection<Packet> packets = Arrays.asList(packet);
 
@@ -235,12 +233,12 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	/*STOP_SITTING {
+	STOP_SITTING {
 		@Override
 		protected void broadcastAnimation(Player player) {
-			player.mount(null);
+			player.eject();
 		}
-	},*/
+	},
 	INVISIBLE {
 		@Override
 		protected void broadcastAnimation(Player player) {
