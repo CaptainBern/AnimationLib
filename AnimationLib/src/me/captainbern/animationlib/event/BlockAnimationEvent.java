@@ -42,7 +42,7 @@ public class BlockAnimationEvent extends Event implements Cancellable{
 		return block;
 	}
 
-	public BlockAnimation getBlokcAnimationType(){
+	public BlockAnimation getBlockAnimationType(){
 		return ba;
 	}
 
