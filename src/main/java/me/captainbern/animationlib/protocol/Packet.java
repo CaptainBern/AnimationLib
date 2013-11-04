@@ -13,12 +13,12 @@ public class Packet {
     private NMSPacket type;
     private Object handle;
 
-    public Packet(int id){
-        type = (NMSPacket) PacketType.byId(id);
-    }
-
     public Packet(NMSPacket packettype){
         type = packettype;
+    }
+
+    public Packet(PacketType packetType) {
+        this.type = packetType.getPacket();
     }
 
     public Object getHandle(){

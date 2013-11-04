@@ -6,20 +6,33 @@ import me.captainbern.animationlib.protocol.packets.*;
 import java.util.HashMap;
 import java.util.logging.Level;
 
-public class PacketType {
+public enum PacketType {
 
-    private static final HashMap<Integer, NMSPacket> packets = new HashMap<>();
+    UNKNOW(-1),
+    ENTITY_LOCATION_ACTION(17),
+    ARM_ANIMATION(18),
+    ENTITY_METADATA(40),
+    BLOCK_BREAK_ANIMATION(55),
+    NAMED_SOUND_EFFECT(62),
+    WORLD_PARTICLES(63),
+    BED(70);
 
-    public static NMSPacket DEFAULT = new NMSPacket();
-    public static Packet17EntityLocationAction ENTITY_LOCATION_ACTION = new Packet17EntityLocationAction();
-    public static Packet18ArmAnimation ARM_ANIMATION = new Packet18ArmAnimation();
-    public static Packet40EntityMetadata ENTITY_METADATA = new Packet40EntityMetadata();
-    public static Packet55BlockBreakAnimation BLOCK_BREAK_ANIMATION = new Packet55BlockBreakAnimation();
-    public static Packet62NamedSoundEffect NAMED_SOUND_EFFECT = new Packet62NamedSoundEffect();
-    public static Packet63WorldParticles WORLD_PARTICLES = new Packet63WorldParticles();
-    public static Packet70Bed BED = new Packet70Bed();
 
-    public static Object byId(int id){
+    private final HashMap<Integer, NMSPacket> packets = new HashMap<>();
+    private NMSPacket packet;
+
+    private PacketType(int id){
+        if(packets.containsKey(id)){
+            throw new UnsupportedOperationException("Unimplemented Packet!");
+        }
+        packet = packetById(id);
+    }
+
+    public NMSPacket getPacket(){
+        return packet == null ? null : packet;
+    }
+
+    public NMSPacket packetById(int id){
         if(id >= 0 && id < 256){
             return packets.get(id);
         }else{
@@ -27,7 +40,7 @@ public class PacketType {
         }
     }
 
-    private static void register(int id, NMSPacket packet){
+    private void register(int id, NMSPacket packet){
         if(packets.containsKey(id)){
             AnimationLib.getInstance().getLogger().log(Level.WARNING, "Cannot register already registered: '{0}' ({1})!", new Object[]{packet.toString(), id});
             return;
@@ -35,14 +48,14 @@ public class PacketType {
         packets.put(id, packet);
     }
 
-    static{
-        register(-1, DEFAULT);
-        register(17, ENTITY_LOCATION_ACTION);
-        register(18, ARM_ANIMATION);
-        register(40, ENTITY_METADATA);
-        register(55, BLOCK_BREAK_ANIMATION);
-        register(62, NAMED_SOUND_EFFECT);
-        register(63, WORLD_PARTICLES);
-        register(70, BED);
+    {
+        register(-1, PacketClasses.DEFAULT);
+        register(17, PacketClasses.ENTITY_LOCATION_ACTION);
+        register(18, PacketClasses.ARM_ANIMATION);
+        register(40, PacketClasses.ENTITY_METADATA);
+        register(55, PacketClasses.BLOCK_BREAK_ANIMATION);
+        register(62, PacketClasses.NAMED_SOUND_EFFECT);
+        register(63, PacketClasses.WORLD_PARTICLES);
+        register(70, PacketClasses.BED);
     }
 }
