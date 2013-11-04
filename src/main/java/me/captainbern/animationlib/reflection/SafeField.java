@@ -84,4 +84,20 @@ public class SafeField<T> implements FieldAccessor<T> {
 
         return string.toString();
     }
+
+    public static <T> T get(Class<?> clazz, String fieldname) {
+        return new SafeField<T>(clazz, fieldname).get(null);
+    }
+
+    public static <T> T get(Object instance, String fieldName){
+        return new SafeField<T>(instance.getClass(), fieldName).get(instance);
+    }
+
+    public static <T> void set(Object instance, String fieldName, T value){
+        new SafeField<T>(instance.getClass(), fieldName).set(instance, value);
+    }
+
+    public static <T> void setStatic(Class<?> clazz, String fieldname, T value) {
+        new SafeField<T>(clazz, fieldname).set(null, value);
+    }
 }
