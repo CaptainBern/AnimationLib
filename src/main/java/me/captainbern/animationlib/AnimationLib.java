@@ -24,17 +24,17 @@ public class AnimationLib extends JavaPlugin {
 
     private static AnimationLib instance;
     public static String LOG_PREFIX = "[AnimationLib] ";
-	
-	public void onEnable(){
-		getLogger().info("Enabled");
-	}
-	
-	/**
-	 * Used when players would activate this through console or something
-	 */
-	public static void main(String[] args){
-		System.out.print("This is a library for Bukkit, place it in your plugins folder!");
-	}
+
+    public void onEnable(){
+        getLogger().info("Enabled");
+    }
+
+    /**
+     * Used when players would activate this through console or something
+     */
+    public static void main(String[] args){
+        System.out.print("This is a library for Bukkit, place it in your plugins folder!");
+    }
 
     public static AnimationLib getInstance(){
         return instance;
