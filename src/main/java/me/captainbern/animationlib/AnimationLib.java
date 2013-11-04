@@ -21,6 +21,9 @@ package me.captainbern.animationlib;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class AnimationLib extends JavaPlugin {
+
+    private static AnimationLib instance;
+    public static String LOG_PREFIX = "[AnimationLib] ";
 	
 	public void onEnable(){
 		getLogger().info("Enabled");
@@ -32,4 +35,8 @@ public class AnimationLib extends JavaPlugin {
 	public static void main(String[] args){
 		System.out.print("This is a library for Bukkit, place it in your plugins folder!");
 	}
+
+    public static AnimationLib getInstance(){
+        return instance;
+    }
 }
