@@ -213,7 +213,7 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	SIT {
+	/*SIT {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
@@ -232,7 +232,7 @@ public enum PlayerAnimation {
 				e.printStackTrace();
 			}
 		}
-	},
+	},*/
 	STOP_SITTING {
 		@Override
 		protected void broadcastAnimation(Player player) {
