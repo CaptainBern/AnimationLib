@@ -1,0 +1,46 @@
+                             AnimationLibrary - by CaptainBern
+===============================================================================================
+This is a small library for the CraftBukkit minecraft-multiplayer server platform.
+
+The library itself contains some niffty utilities that can be used by any developer.
+Some of the utilities are:
+1) A reflection framework; this part of the library is based-off the reflection framework
+   used in BKCommonLib.
+
+2) A small packet library (sending only). This is done with reflection so no NMS code is
+   involved.
+
+3) A BukkitServer and PlayerUtil class. The BukkitServer class can be used to get NMS or
+   Craftbukkit classes by using BukkitServer.getNMSClass(<classname>); or
+   BukkitServer.getCBClass(<classname>);. It also contains some methods to get the nms-package
+   and craftbukkit package name.
+
+   The PlayerUtil class can be used to convert a bukkit player to an EntityPlayer (nms).
+   You can also use it to get a player's connection and this class is also used to send
+   packet by using PlayerUtil.sendPacket(<player>, <packet>);
+================================================================================================
+
+                                            License
+================================================================================================
+                The library is licensed under GNU General Public License. Feel
+                free to copy it in your plugin if it's licensed under GNU GPL v3.
+                (or any other version of the license)
+
+                This plugin is licensed under GNU General Public License.
+                Copyright (C) 2013  CaptainBern
+
+                This program is free software: you can redistribute it and/or modify
+                it under the terms of the GNU General Public License as published by
+                the Free Software Foundation, either version 3 of the License, or
+                (at your option) any later version.
+
+                This program is distributed in the hope that it will be useful,
+                but WITHOUT ANY WARRANTY; without even the implied warranty of
+                MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                GNU General Public License for more details.
+
+                You should have received a copy of the GNU General Public License
+                along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+================================================================================================
+================================================================================================
