@@ -18,7 +18,7 @@ public enum PacketType {
     BED(70);
 
 
-    private final HashMap<Integer, NMSPacket> packets = new HashMap<>();
+    private final HashMap<Integer, NMSPacket> packets = new HashMap<Integer, NMSPacket>();
     private NMSPacket packet;
 
     private PacketType(int id){
@@ -26,6 +26,18 @@ public enum PacketType {
             throw new UnsupportedOperationException("Unimplemented Packet!");
         }
         packet = packetById(id);
+
+        /*
+        If the above doesn't work then we just use this:
+
+        FieldAccessor<HashMap> packetMap = new SafeField(BukkitServer.getNMSClass("Packet"), "a");
+        Object packetClass = packetMap.get(id);
+
+        packet = new NMSPacket(packetClass.getClass());
+
+        This would be a better way of getting the packets since we never have to store a packet
+        class somewhere.
+         */
     }
 
     public NMSPacket getPacket(){
