@@ -18,7 +18,7 @@ the smart protocol framework.
 ## Cool! How do I use it?
 Easy! the library was designed to be as lightweight as possible.
 
-To let a player perform a specific animation jusrt do:
+To let a player perform a specific animation just do:
 ```java
 PlayerAnimation.SWING_ARM(<player>);
 ```
