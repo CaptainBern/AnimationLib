@@ -8,6 +8,7 @@ import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
 
 import me.captainbern.animationlib.utils.PlayerUtil;
+import me.captainbern.animationlib.utils.wrappers.DataWatcher;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -65,15 +66,16 @@ public enum PlayerAnimation {
 				e.printStackTrace();
 			}
 		}
-	}, ;
-	/*DEAD {
+	},
+	DEAD {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet70Bed");
-				packet.setPublicValue("c", player.getEntityId());
-				packet.setPublicValue("b", 3);
+                Packet packet = new Packet(PacketType.BED);
+                packet.write("c", player.getEntityId());
+                packet.write("b", 3);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -87,9 +89,10 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setPublicValue("a", player.getEntityId());
-				packet.setPublicValue("b", 7);
+                Packet packet = new Packet(PacketType.ARM_ANIMATION);
+                packet.write("a", player.getEntityId());
+                packet.write("b", 7);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -103,12 +106,13 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet17EntityLocationAction");
-				packet.setPublicValue("a", player.getEntityId());
-				packet.setPublicValue("e", 0);
-				packet.setPublicValue("b", (int) player.getLocation().getX());
-				packet.setPublicValue("c", (int) player.getLocation().getY());
-				packet.setPublicValue("d", (int) player.getLocation().getZ());
+                Packet packet = new Packet(PacketType.ENTITY_LOCATION_ACTION);
+                packet.write("a", player.getEntityId());
+                packet.write("e", 0);
+                packet.write("b", player.getLocation().getX());
+                packet.write("c", player.getLocation().getY());
+                packet.write("d", player.getLocation().getZ());
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -123,9 +127,10 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet18ArmAnimation");
-				packet.setPublicValue("a", player.getEntityId());
-				packet.setPublicValue("b", 3);
+                Packet packet = new Packet(PacketType.ARM_ANIMATION);
+                packet.write("a", player.getEntityId());
+                packet.write("b", 3);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -139,9 +144,10 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet70Bed");
-				packet.setPublicValue("c", player.getEntityId());
-				packet.setPublicValue("b", 1);
+                Packet packet = new Packet(PacketType.BED);
+                packet.write("c", player.getEntityId());
+                packet.write("b", 1);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -155,9 +161,10 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet70Bed");
-				packet.setPublicValue("c", player.getEntityId());
-				packet.setPublicValue("b", 2);
+				Packet packet = new Packet(PacketType.BED);
+                packet.write("c", player.getEntityId());
+                packet.write("b", 2);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -171,9 +178,10 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet70Bed");
-				packet.setPublicValue("c", player.getEntityId());
-				packet.setPublicValue("b", 4);
+				Packet packet = new Packet(PacketType.BED);
+                packet.write("c", player.getEntityId());
+                packet.write("b", 4);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -187,9 +195,10 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet70Bed");
-				packet.setPublicValue("c", player.getEntityId());
-				packet.setPublicValue("b", 3);
+				Packet packet = new Packet(PacketType.BED);
+                packet.write("c", player.getEntityId());
+                packet.write("b", 3);
+
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
@@ -198,7 +207,7 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	SIT {
+	/*SIT {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
@@ -217,7 +226,7 @@ public enum PlayerAnimation {
 				e.printStackTrace();
 			}
 		}
-	},
+	},*/
 	STOP_SITTING {
 		@Override
 		protected void broadcastAnimation(Player player) {
@@ -229,16 +238,17 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet40EntityMetadata");
-				packet.setPublicValue("a", player.getEntityId());
-				
-				DataWatcher data = new DataWatcher();
-				data.write(0, (Object) (byte) 0x20);
-				data.write(1, (Object) (short) 0);
-				data.write(8, (Object) (byte) 0);
-				
-				packet.setPrivateValue("b", ReflectionUtil.getMethod("c", data.getDataWatcherObject().getClass()).invoke(data.getDataWatcherObject()));
-				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
+				Packet packet = new Packet(PacketType.ENTITY_METADATA);
+                packet.write("a", player.getEntityId());
+
+                DataWatcher watcher = new DataWatcher();
+                watcher.write(0, (byte) 0x20);
+                watcher.write(1, (short) 0);
+                watcher.write(8, (byte) 0);
+
+                packet.write("b", watcher.getAllWatched());
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
 				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
@@ -251,16 +261,17 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet40EntityMetadata");
-				packet.setPublicValue("a", player.getEntityId());
-				
-				DataWatcher data = new DataWatcher();
-				data.write(0, (Object) (byte) 0);
-				data.write(1, (Object) (short) 0);
-				data.write(8, (Object) (byte) 0);
-				
-				packet.setPrivateValue("b", ReflectionUtil.getMethod("c", data.getDataWatcherObject().getClass()).invoke(data.getDataWatcherObject()));
-				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
+                Packet packet = new Packet(PacketType.ENTITY_METADATA);
+                packet.write("a", player.getEntityId());
+
+                DataWatcher watcher = new DataWatcher();
+                watcher.write(0, (byte) 0);
+                watcher.write(1, (short) 0);
+                watcher.write(8, (byte) 0);
+
+                packet.write("b", watcher.getAllWatched());
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
 				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
@@ -273,23 +284,24 @@ public enum PlayerAnimation {
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Packet packet = new Packet("Packet40EntityMetadata");
-				packet.setPublicValue("a", player.getEntityId());
-				
-				DataWatcher data = new DataWatcher();
-				data.write(0, (Object) (byte) 0x01);
-				data.write(1, (Object) (short) 0);
-				data.write(8, (Object) (byte) 0);
-				
-				packet.setPrivateValue("b", ReflectionUtil.getMethod("c", data.getDataWatcherObject().getClass()).invoke(data.getDataWatcherObject()));
-				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
+                Packet packet = new Packet(PacketType.ENTITY_METADATA);
+                packet.write("a", player.getEntityId());
+
+                DataWatcher watcher = new DataWatcher();
+                watcher.write(0, (byte) 0x01);
+                watcher.write(1, (short) 0);
+                watcher.write(8, (byte) 0);
+
+                packet.write("b", watcher.getAllWatched());
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
 				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + "), this girl isn't on fire!");
 				e.printStackTrace();
 			}
 		}
-	}; */
+	};
 
 	/* STOP ENUMS */
 
