@@ -1,18 +1,12 @@
 package me.captainbern.animationlib.animations;
 
-import java.util.Arrays;
-import java.util.Collection;
-
-import me.captainbern.animationlib.utils.Packet;
-
-import org.bukkit.Bukkit;
 import org.bukkit.Location;
-import org.bukkit.World;
-import org.bukkit.entity.Player;
 
 public enum SoundEffect {
+
+    NULL;
 	
-	AMBIENT_CAVE {
+	/*AMBIENT_CAVE {
 		@Override
 		protected void broadcastAnimation(Location loc, float volume, int pitch) {
 			try{
@@ -491,11 +485,11 @@ public enum SoundEffect {
 				e.printStackTrace();
 			}
 		}
-	},;
+	},;  */
 
 	/* STOP ENUMS */
 
-	public void play(Location loc, float volume, int pitch){
+	/*public void play(Location loc, float volume, int pitch){
 		broadcastAnimation(loc, pitch, pitch);
 	}
 
@@ -509,7 +503,7 @@ public enum SoundEffect {
 					packet.send(player);
 			}
 		}
-	}
+	}  */
 
 	protected void broadcastAnimation(Location loc, float volume, int pitch){
 		throw new UnsupportedOperationException("[AnimationLib] Unimplemented animation");
