@@ -2,7 +2,9 @@ package me.captainbern.animationlib.protocol;
 
 import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.protocol.packets.NMSPacket;
+import me.captainbern.animationlib.reflection.ClassTemplate;
 import me.captainbern.animationlib.reflection.FieldAccessor;
+import me.captainbern.animationlib.reflection.NMSClassTemplate;
 import me.captainbern.animationlib.reflection.SafeField;
 
 import java.lang.reflect.Field;
@@ -10,28 +12,30 @@ import java.util.logging.Level;
 
 public class Packet {
 
-    private NMSPacket type;
+    private ClassTemplate<?> packetTemplate;
     private Object handle;
 
-    public Packet(NMSPacket packettype){
-        type = packettype;
+    public Packet(Class<?> packettype){
+        this.packetTemplate = new ClassTemplate(packettype);
+        this.handle = packetTemplate.newInstance();
     }
 
     public Packet(PacketType packetType) {
-        this.type = packetType.getPacket();
+        this.packetTemplate = packetType.getPacketTemplate();
+        this.handle = packetType.getPacket();
     }
 
     public Object getHandle(){
-        return handle;
+        return this.handle;
     }
 
     public <T> void write(FieldAccessor<T> accessor, T value){
-        accessor.set(getHandle(), value);
+        accessor.set(this.getHandle(), value);
     }
 
     public void write(Field field, Object value){
         try {
-            field.set(getHandle(), value);
+            field.set(this.getHandle(), value);
         } catch (IllegalAccessException e) {
             AnimationLib.getInstance().getLogger().log(Level.WARNING, "Could not access field: '{0}'!", field.getName());
             e.printStackTrace();
@@ -39,11 +43,11 @@ public class Packet {
     }
 
     public void write(String fieldName, Object value){
-        SafeField.set(getHandle(), fieldName, value);
+        SafeField.set(this.getHandle(), fieldName, value);
     }
 
     public void write(int index, Object value){
-        FieldAccessor accessor = type.getFields().get(index);
-        accessor.set(handle, value);
+        String field = String.valueOf(this.packetTemplate.getFields().get(index));
+        write(field, value);
     }
 }

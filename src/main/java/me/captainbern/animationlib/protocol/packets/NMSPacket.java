@@ -17,4 +17,8 @@ public class NMSPacket extends NMSClassTemplate{
     public int getPacketSize(Object packet){
         return size.invoke(packet);
     }
+
+    public NMSPacket(Class<?> clazz){
+        this.setNMSClass(clazz.getName());
+    }
 }

@@ -4,7 +4,7 @@ import me.captainbern.animationlib.protocol.packets.*;
 
 public class PacketClasses {
 
-    public static NMSPacket DEFAULT = new NMSPacket();
+  //  public static NMSPacket DEFAULT = new NMSPacket();
     public static Packet17EntityLocationAction ENTITY_LOCATION_ACTION = new Packet17EntityLocationAction();
     public static Packet18ArmAnimation ARM_ANIMATION = new Packet18ArmAnimation();
     public static Packet40EntityMetadata ENTITY_METADATA = new Packet40EntityMetadata();

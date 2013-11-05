@@ -1,10 +1,11 @@
 package me.captainbern.animationlib.protocol;
 
-import me.captainbern.animationlib.AnimationLib;
-import me.captainbern.animationlib.protocol.packets.*;
+import me.captainbern.animationlib.reflection.ClassTemplate;
+import me.captainbern.animationlib.reflection.NMSClassTemplate;
+import me.captainbern.animationlib.reflection.SafeField;
+import me.captainbern.animationlib.utils.refs.PacketRef;
 
-import java.util.HashMap;
-import java.util.logging.Level;
+import java.util.List;
 
 public enum PacketType {
 
@@ -18,56 +19,48 @@ public enum PacketType {
     BED(70);
 
 
-    private final HashMap<Integer, NMSPacket> packets = new HashMap<Integer, NMSPacket>();
-    private NMSPacket packet;
+    private int id;
+    private ClassTemplate<?> packetTemplate;
+    private final String[] fieldNames;
 
     private PacketType(int id){
-        if(packets.containsKey(id)){
-            throw new UnsupportedOperationException("Unimplemented Packet!");
-        }
-        packet = packetById(id);
 
-        /*
-        If the above doesn't work then we just use this:
+        this.id = id;
+        Class<?> type = (Class<?>) PacketRef.getEvilMap().get(id);
 
-        FieldAccessor<HashMap> packetMap = new SafeField(BukkitServer.getNMSClass("Packet"), "a");
-        Object packetClass = packetMap.get(id);
-
-        packet = new NMSPacket(packetClass.getClass());
-
-        This would be a better way of getting the packets since we never have to store a packet
-        class somewhere.
-         */
-    }
-
-    public NMSPacket getPacket(){
-        return packet == null ? null : packet;
-    }
-
-    public NMSPacket packetById(int id){
-        if(id >= 0 && id < 256){
-            return packets.get(id);
-        }else{
-            return null;
-        }
-    }
-
-    private void register(int id, NMSPacket packet){
-        if(packets.containsKey(id)){
-            AnimationLib.getInstance().getLogger().log(Level.WARNING, "Cannot register already registered: '{0}' ({1})!", new Object[]{packet.toString(), id});
+        if(type == null){
+            this.packetTemplate = null;
+            this.fieldNames = new String[0];
             return;
         }
-        packets.put(id, packet);
+
+        this.packetTemplate = NMSClassTemplate.create(type);
+
+        List<SafeField<?>> fields = this.packetTemplate.getFields();
+        this.fieldNames = new String[fields.size()];
+        for(int i = 0; i < fields.size(); i++){
+            SafeField<?> field = fields.get(i);
+            this.fieldNames[i] = field.getName();
+        }
     }
 
-    {
-        register(-1, PacketClasses.DEFAULT);
-        register(17, PacketClasses.ENTITY_LOCATION_ACTION);
-        register(18, PacketClasses.ARM_ANIMATION);
-        register(40, PacketClasses.ENTITY_METADATA);
-        register(55, PacketClasses.BLOCK_BREAK_ANIMATION);
-        register(62, PacketClasses.NAMED_SOUND_EFFECT);
-        register(63, PacketClasses.WORLD_PARTICLES);
-        register(70, PacketClasses.BED);
+    public Object getPacket(){
+        if(this.packetTemplate == null){
+            return null;
+        }               else{
+            return this.packetTemplate.newInstance();
+        }
+    }
+
+    public String getField(int index) {
+        return (index >= 0 && index < fieldNames.length) ? fieldNames[index] : null;
+    }
+
+    public ClassTemplate<?> getPacketTemplate(){
+        return this.packetTemplate;
+    }
+
+    public int getId(){
+        return this.id;
     }
 }
