@@ -328,5 +328,4 @@ public enum PlayerAnimation {
 	protected void broadcastAnimation(Player player){
 		throw new UnsupportedOperationException("[AnimationLib] Unimplemented animation");
 	}
-
 }
