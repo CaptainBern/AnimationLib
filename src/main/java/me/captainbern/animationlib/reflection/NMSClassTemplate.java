@@ -4,9 +4,9 @@ import me.captainbern.animationlib.AnimationLib;
 
 import java.util.logging.Level;
 
-public class NMSClassTemplate extends ClassTemplate<Object> {
+public class NMSClassTemplate extends ClassTemplate {
 
-    public NMSClassTemplate(){
+    protected NMSClassTemplate(){
         setNMSClass(getClass().getSimpleName());
     }
 

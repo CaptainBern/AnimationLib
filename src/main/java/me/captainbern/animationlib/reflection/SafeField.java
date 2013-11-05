@@ -65,6 +65,10 @@ public class SafeField<T> implements FieldAccessor<T> {
         return null;
     }
 
+    public String getName(){
+        return this.field.getName();
+    }
+
     public String toString(){
         StringBuilder string = new StringBuilder(75);
         int mod = this.field.getModifiers();

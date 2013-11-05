@@ -32,6 +32,9 @@ public class SafeMethod<T> implements MethodAccessor<T> {
         if(method == null){
             AnimationLib.getInstance().getLogger().log(Level.WARNING, "Cannot create a SafeMethod!");
         }
+        if(!method.isAccessible()){
+            method.setAccessible(true);
+        }
         this.method = method;
         this.params = method.getParameterTypes();
         this.isStatic = Modifier.isStatic(method.getModifiers());
