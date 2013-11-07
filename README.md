@@ -30,7 +30,7 @@ to make a block appear broken, the SoundEffect can be used to play every sound t
 WorldAnimation can be used to spawn several kinds of particles.
 
 ## Sending packets yourself.
-The library contains a Reflection and Protocol framework. The reflection framework makes it
+The library contains a Reflection (based off the BKCommonLib) and Protocol framework. The reflection framework makes it
 possible for the library to be version independent.
 
 The reflection framework can be used to create NMS or CB Class templates/Instances.
