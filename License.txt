@@ -19,7 +19,6 @@ Some of the utilities are:
    You can also use it to get a player's connection and this class is also used to send
    packet by using PlayerUtil.sendPacket(<player>, <packet>);
 ================================================================================================
-
                                             License
 ================================================================================================
                 The library is licensed under GNU General Public License. Feel
