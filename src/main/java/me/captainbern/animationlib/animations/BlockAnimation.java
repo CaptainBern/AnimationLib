@@ -1,5 +1,6 @@
 package me.captainbern.animationlib.animations;
 
+import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.event.BlockAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
@@ -34,7 +35,7 @@ public enum BlockAnimation {
                 sendPacketNearby(block.getLocation(), Arrays.asList(packet), this, block);
 
             }catch(Exception e){
-                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
                 e.printStackTrace();
             }
         }
@@ -63,6 +64,6 @@ public enum BlockAnimation {
     }
 
     protected void broadcastAnimation(Block block, short damage){
-        throw new UnsupportedOperationException("[AnimationLib] Unimplemented animation");
+        throw new UnsupportedOperationException(AnimationLib.LOG_PREFIX + "Unimplemented animation");
     }
 }

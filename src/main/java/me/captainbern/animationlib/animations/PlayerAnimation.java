@@ -3,6 +3,7 @@ package me.captainbern.animationlib.animations;
 import java.util.Arrays;
 import java.util.Collection;
 
+import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
@@ -28,7 +29,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -45,7 +46,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -62,7 +63,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -79,7 +80,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -96,7 +97,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -116,7 +117,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet17EntityLocation packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet17EntityLocation packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 
@@ -134,7 +135,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet18ArmAnimation packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -151,7 +152,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -168,7 +169,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -185,7 +186,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -202,7 +203,7 @@ public enum PlayerAnimation {
 				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet70Bed packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -251,7 +252,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -274,7 +275,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + ")");
 				e.printStackTrace();
 			}
 		}
@@ -297,7 +298,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + "), this girl isn't on fire!");
+				Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet40EntityMetadata packet!" + "(" + this + "), this girl isn't on fire!");
 				e.printStackTrace();
 			}
 		}
@@ -326,6 +327,6 @@ public enum PlayerAnimation {
 	}
 
 	protected void broadcastAnimation(Player player){
-		throw new UnsupportedOperationException("[AnimationLib] Unimplemented animation");
+		throw new UnsupportedOperationException(AnimationLib.LOG_PREFIX + "Unimplemented animation");
 	}
 }
