@@ -59,7 +59,6 @@ public enum PacketType {
     /**
      * Sent when an entities DataWatcher is updated.
      * <p>
-     * Remember to clone the packet if you are modifying it.
      */
     ENTITY_METADATA(40),
     MOB_EFFECT(41),
@@ -92,7 +91,6 @@ public enum PacketType {
     /**
      * Sent the first time a tile entity (chest inventory, etc.) is withing range of the player, or has been updated.
      * <p>
-     * Remember to clone the packet if you are modifying it.
      */
     TILE_ENTITY_DATA(132),
     OPEN_TILE_ENTITY(133),
