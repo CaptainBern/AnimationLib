@@ -1,10 +1,8 @@
 package me.captainbern.animationlib.protocol;
 
 import me.captainbern.animationlib.AnimationLib;
-import me.captainbern.animationlib.protocol.packets.NMSPacket;
 import me.captainbern.animationlib.reflection.ClassTemplate;
 import me.captainbern.animationlib.reflection.FieldAccessor;
-import me.captainbern.animationlib.reflection.NMSClassTemplate;
 import me.captainbern.animationlib.reflection.SafeField;
 
 import java.lang.reflect.Field;
