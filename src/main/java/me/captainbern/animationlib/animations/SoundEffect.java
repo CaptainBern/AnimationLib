@@ -1,5 +1,6 @@
 package me.captainbern.animationlib.animations;
 
+import me.captainbern.animationlib.event.SoundEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
 import me.captainbern.animationlib.utils.PlayerUtil;
@@ -36,7 +37,7 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
             }catch(Exception e){
                 Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
@@ -44,10 +45,10 @@ public enum SoundEffect {
             }
         }
     },
-	AMBIENT_WEATHER_RAIN {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+    AMBIENT_WEATHER_RAIN {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.AmbientWeatherRain);
@@ -67,18 +68,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	AMBIENT_WEATHER_THUNDER {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    AMBIENT_WEATHER_THUNDER {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.AmbientWeatherThunder);
@@ -98,18 +99,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	DAMAGE_FALL_BIG{
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    DAMAGE_FALL_BIG{
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.DamageFallBig);
@@ -129,18 +130,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	DAMAGE_FALL_SMALL {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    DAMAGE_FALL_SMALL {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.DamageFallSmall);
@@ -160,18 +161,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	FIRE {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    FIRE {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.FireActive);
@@ -191,18 +192,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	FIRE_IGNITE {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    FIRE_IGNITE {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.FireIgnite);
@@ -222,18 +223,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	LIQUID_LAVA {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    LIQUID_LAVA {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.LiquidLava);
@@ -253,20 +254,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
-	
-				sendPacketNearby(loc, Arrays.asList(packet));
-				
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	LAVA_POP {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+                sendPacketNearby(loc, Arrays.asList(packet), this);
+
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    LAVA_POP {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.LiquidLavaPop);
@@ -286,18 +285,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	SPLASH {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    SPLASH {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.LiquidSplash);
@@ -317,18 +316,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	WATER {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    WATER {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.LiquidWater);
@@ -348,18 +347,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	BLAZE_BREATHE {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    BLAZE_BREATHE {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.MobBlazeBreathe);
@@ -379,18 +378,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
-	
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	BLAZE_DEATH {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+                sendPacketNearby(loc, Arrays.asList(packet), this);
+
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    BLAZE_DEATH {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.MobBlazeDeath);
@@ -410,18 +409,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	BLAZE_HIT {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    BLAZE_HIT {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.MobBlazeHit);
@@ -441,18 +440,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	CAT_HISS {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    CAT_HISS {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.MobCatHiss);
@@ -472,18 +471,18 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	},
-	CAT_HIT {
-		@Override
-		protected void broadcastAnimation(Location loc, float volume, int pitch) {
-			try{
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    },
+    CAT_HIT {
+        @Override
+        protected void broadcastAnimation(Location loc, float volume, int pitch) {
+            try{
 
                 Packet packet = new Packet(PacketType.NAMED_SOUND_EFFECT);
                 packet.write("a", SoundType.MobCatHitt);
@@ -503,14 +502,14 @@ public enum SoundEffect {
 
                 packet.write("f", pitch);
 
-                sendPacketNearby(loc, Arrays.asList(packet));
+                sendPacketNearby(loc, Arrays.asList(packet), this);
 
-			}catch(Exception e){
-				Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
-				e.printStackTrace();
-			}
-		}
-	};
+            }catch(Exception e){
+                Bukkit.getLogger().warning("[AnimationLib] Something went wrong while crafting the Packet62NamedSoundEffect packet! (BLOCK_BREAK)");
+                e.printStackTrace();
+            }
+        }
+    };
 
 	/* STOP ENUMS */
 
@@ -518,14 +517,18 @@ public enum SoundEffect {
         broadcastAnimation(loc, pitch, pitch);
     }
 
-    private static void sendPacketNearby(Location loc, Collection<Packet> packets) {
+    private static void sendPacketNearby(Location loc, Collection<Packet> packets, SoundEffect effect) {
         World world = loc.getWorld();
         for(Player player : Bukkit.getOnlinePlayers()){
             if(player == null || player.getWorld() != world){
                 continue;
             }
-            for(Packet packet : packets){
-                PlayerUtil.sendPacket(player, packet);
+            SoundEvent event = new SoundEvent(effect);
+            Bukkit.getPluginManager().callEvent(event);
+            if(!event.isCancelled()){
+                for(Packet packet : packets){
+                    PlayerUtil.sendPacket(player, packet);
+                }
             }
         }
     }
