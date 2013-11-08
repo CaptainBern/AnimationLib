@@ -8,6 +8,8 @@ public class AnimationLib extends JavaPlugin {
     public static String LOG_PREFIX = "[AnimationLib] ";
 
     public void onEnable(){
+        instance = this;
+
         getLogger().info("Enabled");
     }
 
