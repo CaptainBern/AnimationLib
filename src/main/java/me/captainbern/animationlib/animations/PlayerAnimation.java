@@ -208,26 +208,24 @@ public enum PlayerAnimation {
 			}
 		}
 	},
-	/*SIT {
+	SIT {
 		@Override
 		protected void broadcastAnimation(Player player) {
 			try {
 
-				Object entityPlayer = ReflectionUtil.BukkitPlayerToEntityPlayer(player);
-                                Object datawatcher = entityPlayer.getClass().getMethod("getDataWatcher").invoke(entityPlayer);
-                                Class c = ReflectionUtil.getNMSClass("Packet40EntityMetadata", int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class);
+				Packet packet = new Packet(PacketType.ATTACH_ENTITY);
+                packet.write("a", 0);
+                packet.write("b", player.getEntityId());
+                packet.write("c", player.getEntityId());
 
-				Packet packet = c.getConstructor(int.class, ReflectionUtil.getNMSClass("DataWatcher"), boolean.class).newInstance(player.getEntityId(), datawatcher.getClass().getMethod("c").invoke(datawatcher)), true);				
-				
-				Collection<Packet> packets = Arrays.asList(packet);
-
-				sendPacketNearby(player.getLocation(), packets, this);
+				sendPacketNearby(player.getLocation(), Arrays.asList(packet), this);
 
 			} catch (Exception e) {
-				e.printStackTrace();
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet39AttachEntity packet!" + "(" + this + ")");
+                e.printStackTrace();
 			}
 		}
-	},*/
+	},
 	STOP_SITTING {
 		@Override
 		protected void broadcastAnimation(Player player) {
