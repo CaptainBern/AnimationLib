@@ -214,7 +214,7 @@ public enum PlayerAnimation {
             try {
 
                 Packet packet = new Packet(PacketType.ATTACH_ENTITY);
-                packet.write("a", 0);
+                packet.write("a", 0); //leash present or not?
                 packet.write("b", player.getEntityId());
                 packet.write("c", player.getEntityId());
 
