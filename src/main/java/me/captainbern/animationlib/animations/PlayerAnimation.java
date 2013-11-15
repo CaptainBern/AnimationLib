@@ -7,9 +7,9 @@ import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
-
 import me.captainbern.animationlib.utils.PlayerUtil;
 import me.captainbern.animationlib.utils.wrappers.DataWatcher;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
