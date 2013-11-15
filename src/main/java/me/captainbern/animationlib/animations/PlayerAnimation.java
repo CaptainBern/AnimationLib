@@ -1,3 +1,10 @@
+/**
+ * This is the PlayerAnimation class.
+ * When using datawatcher's we create a new instance of one, why?
+ * Well if we get the player's datawatcher and write data to that
+ * then the animations will actually happen serverside. (now every animationµ
+ * appears to be there while it isn't)
+ */
 package me.captainbern.animationlib.animations;
 
 import java.util.Arrays;
