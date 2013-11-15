@@ -4,8 +4,8 @@ import org.bukkit.Bukkit;
 
 public class BukkitServer {
 
-    public static String NMS_ROOT = getNMSPackageName();
-    public static String CB_ROOT = getOBCPackageName();
+    public static final String NMS_ROOT = getNMSPackageName();
+    public static final String CB_ROOT = getOBCPackageName();
 
     private static String getNMSPackageName() {
         return "net.minecraft.server." + Bukkit.getServer().getClass().getPackage().getName().replace(".", ",").split(",")[3];
