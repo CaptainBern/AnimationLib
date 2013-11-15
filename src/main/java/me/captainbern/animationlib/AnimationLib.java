@@ -5,7 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class AnimationLib extends JavaPlugin {
 
     private static AnimationLib instance;
-    public static String LOG_PREFIX = "[AnimationLib] ";
+    public static final String LOG_PREFIX = "[AnimationLib] ";
 
     public void onEnable(){
         instance = this;
