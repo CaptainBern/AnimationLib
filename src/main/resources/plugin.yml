@@ -1,5 +1,5 @@
 name: AnimationLib
-version: 0.1.1
+version: ${project.version}
 main: me.captainbern.animationlib.AnimationLib
 author: CaptainBern
-description: A small and compact library to play diffrent animation by making use of fancy reflection.
+description: A small and compact library to play different animation by making use of fancy reflection.
