@@ -5,6 +5,8 @@ import me.captainbern.animationlib.event.BlockAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
 import me.captainbern.animationlib.utils.PlayerUtil;
+import me.captainbern.animationlib.utils.wrappers.RandGen;
+
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
@@ -21,12 +23,12 @@ public enum BlockAnimation {
         protected void broadcastAnimation(Block block, short damage) {
             try{
 
-                if(damage > 7 || damage < 0){
-                    throw new NumberFormatException("Damage needs to be between 0 and 7!");
+                if(damage > 9 || damage < 0){
+                    throw new NumberFormatException("Damage needs to be between 0 and 9!");
                 }
 
                 Packet packet = new Packet(PacketType.BLOCK_BREAK_ANIMATION);
-                packet.write("a", 0);
+                packet.write("a", RandGen.nextInt());
                 packet.write("b", block.getX());
                 packet.write("c", block.getY());
                 packet.write("d", block.getZ());
