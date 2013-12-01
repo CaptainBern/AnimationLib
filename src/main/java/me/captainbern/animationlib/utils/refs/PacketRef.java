@@ -10,6 +10,6 @@ public class PacketRef {
     public static final ClassTemplate<Object> protocol = NMSClassTemplate.create("EnumProtocol");
 
     public static BiMap getServerPacketRegistry(){
-       return (BiMap) protocol.getField("h").get(null);
+       return (BiMap) protocol.getField("h").get(protocol.newInstance());
     }
 }
