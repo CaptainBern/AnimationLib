@@ -3,7 +3,7 @@ package me.captainbern.animationlib.protocol;
 import me.captainbern.animationlib.reflection.ClassTemplate;
 import me.captainbern.animationlib.reflection.NMSClassTemplate;
 import me.captainbern.animationlib.reflection.SafeField;
-import me.captainbern.animationlib.utils.refs.PacketRef;
+import me.captainbern.animationlib.utils.refs.Protocol;
 
 import java.util.List;
 
@@ -91,7 +91,7 @@ public enum PacketType {
     private PacketType(int id){
 
         this.id = id;
-        Class<?> type = (Class<?>) PacketRef.getServerPacketRegistry().get(id);
+        Class<?> type = (Class<?>) Protocol.getServerPacketRegistry().get(id);
 
         if(type == null){
             this.packetTemplate = null;
