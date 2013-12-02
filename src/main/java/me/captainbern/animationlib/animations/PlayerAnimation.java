@@ -7,7 +7,7 @@ import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
-import me.captainbern.animationlib.utils.PlayerUtil;
+import me.captainbern.animationlib.utils.EntityUtil;
 import me.captainbern.animationlib.utils.wrappers.DataWatcher;
 
 import org.bukkit.Bukkit;
@@ -110,9 +110,9 @@ public enum PlayerAnimation {
 
                 Packet packet = new Packet(PacketType.BED);
                 packet.write("a", player.getEntityId());
-                packet.write("b", player.getLocation().getX());
-                packet.write("c", player.getLocation().getY());
-                packet.write("d", player.getLocation().getZ());
+                packet.write("b", player.getLocation().getBlockX());
+                packet.write("c", player.getLocation().getBlockY());
+                packet.write("d", player.getLocation().getBlockZ());
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
@@ -147,7 +147,7 @@ public enum PlayerAnimation {
 
                 Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
                 packet.write("b", 2);
-                packet.write("c", null);
+                //packet.write("c", null);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, player);
 
@@ -164,7 +164,7 @@ public enum PlayerAnimation {
 
                 Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
                 packet.write("b", 1);
-                packet.write("c", null);
+                //packet.write("c", null);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, player);
 
@@ -181,7 +181,7 @@ public enum PlayerAnimation {
 
                 Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
                 packet.write("b", 4);
-                packet.write("b", null);
+                //packet.write("b", null);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
@@ -223,7 +223,7 @@ public enum PlayerAnimation {
                 Packet packet = new Packet(PacketType.ENTITY_METADATA);
                 packet.write("a", player.getEntityId());
 
-                DataWatcher watcher = new DataWatcher();
+                DataWatcher watcher = new DataWatcher(player);
                 watcher.write(0, (byte) 0x20);
                 watcher.write(1, (short) 0);
                 watcher.write(8, (byte) 0);
@@ -246,7 +246,7 @@ public enum PlayerAnimation {
                 Packet packet = new Packet(PacketType.ENTITY_METADATA);
                 packet.write("a", player.getEntityId());
 
-                DataWatcher watcher = new DataWatcher();
+                DataWatcher watcher = new DataWatcher(player);
                 watcher.write(0, (byte) 0);
                 watcher.write(1, (short) 0);
                 watcher.write(8, (byte) 0);
@@ -269,7 +269,7 @@ public enum PlayerAnimation {
                 Packet packet = new Packet(PacketType.ENTITY_METADATA);
                 packet.write("a", player.getEntityId());
 
-                DataWatcher watcher = new DataWatcher();
+                DataWatcher watcher = new DataWatcher(player);
                 watcher.write(0, (byte) 0x01);
                 watcher.write(1, (short) 0);
                 watcher.write(8, (byte) 0);
@@ -298,7 +298,7 @@ public enum PlayerAnimation {
             Bukkit.getPluginManager().callEvent(event);
             if(!event.isCancelled()) {
                 for(Packet packet : packets){
-                    PlayerUtil.sendPacket(playerSendTo, packet);
+                    EntityUtil.sendPacket(playerSendTo, packet);
                 }
             }
         }else{
@@ -310,7 +310,7 @@ public enum PlayerAnimation {
                 Bukkit.getPluginManager().callEvent(event);
                 if(!event.isCancelled()) {
                     for(Packet packet : packets){
-                        PlayerUtil.sendPacket(player, packet);
+                        EntityUtil.sendPacket(player, packet);
                     }
                 }
             }

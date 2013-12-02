@@ -11,6 +11,8 @@
 
 
     <build>
+        <defaultGoal>clean install</defaultGoal>
+
         <finalName>AnimationLib</finalName>
         <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
         <resources>

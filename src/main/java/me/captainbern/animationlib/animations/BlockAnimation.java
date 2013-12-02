@@ -4,7 +4,7 @@ import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.event.BlockAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
-import me.captainbern.animationlib.utils.PlayerUtil;
+import me.captainbern.animationlib.utils.EntityUtil;
 import me.captainbern.animationlib.utils.wrappers.RandGen;
 
 import org.bukkit.Bukkit;
@@ -59,7 +59,7 @@ public enum BlockAnimation {
             Bukkit.getPluginManager().callEvent(event);
             if(!event.isCancelled()) {
                 for(Packet packet : packets){
-                    PlayerUtil.sendPacket(player, packet);
+                    EntityUtil.sendPacket(player, packet);
                 }
             }
         }

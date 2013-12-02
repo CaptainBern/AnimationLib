@@ -1,13 +1,15 @@
 package me.captainbern.animationlib.utils.wrappers;
 
+import me.captainbern.animationlib.utils.EntityUtil;
 import me.captainbern.animationlib.utils.refs.DataWatcherRef;
+import org.bukkit.entity.Entity;
 
 import java.util.List;
 
 public class DataWatcher extends BasicWrapper{
 
-    public DataWatcher(){
-        setHandle(DataWatcherRef.create());
+    public DataWatcher(Entity entity){
+        setHandle(DataWatcherRef.create(EntityUtil.getHandle(entity)));
     }
 
     public void write(int index, Object value){
