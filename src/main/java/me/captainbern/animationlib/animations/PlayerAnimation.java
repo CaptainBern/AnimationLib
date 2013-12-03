@@ -283,6 +283,108 @@ public enum PlayerAnimation {
                 e.printStackTrace();
             }
         }
+    },
+    DEMO_WELCOME {
+        @Override
+        protected void broadcastAnimation(Player player) {
+            try {
+
+                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                packet.write("b", 5);
+                packet.write("c", 0);
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
+
+            } catch (Exception e) {
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                e.printStackTrace();
+            }
+        }
+    },
+    DEMO_TELL_MOVE_CONTROLS {
+        @Override
+        protected void broadcastAnimation(Player player) {
+            try {
+
+                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                packet.write("b", 5);
+                packet.write("c", 101);
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
+
+            } catch (Exception e) {
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                e.printStackTrace();
+            }
+        }
+    },
+    DEMO_TELL_JUMP {
+        @Override
+        protected void broadcastAnimation(Player player) {
+            try {
+
+                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                packet.write("b", 5);
+                packet.write("c", 102);
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
+
+            } catch (Exception e) {
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                e.printStackTrace();
+            }
+        }
+    },
+    DEMO_TELL_INVENTORY {
+        @Override
+        protected void broadcastAnimation(Player player) {
+            try {
+
+                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                packet.write("b", 5);
+                packet.write("c", 103);
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
+
+            } catch (Exception e) {
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                e.printStackTrace();
+            }
+        }
+    },
+    FADE_DARK {
+        @Override
+        protected void broadcastAnimation(Player player) {
+            try {
+
+                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                packet.write("b", 7);
+                packet.write("c", 1);
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
+
+            } catch (Exception e) {
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                e.printStackTrace();
+            }
+        }
+    },
+    FADE_BRIGHT{
+        @Override
+        protected void broadcastAnimation(Player player) {
+            try {
+
+                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                packet.write("b", 7);
+                packet.write("c", 0);
+
+                sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
+
+            } catch (Exception e) {
+                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                e.printStackTrace();
+            }
+        }
     };
 
 	/* STOP ENUMS */

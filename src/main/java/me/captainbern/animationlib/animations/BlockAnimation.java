@@ -5,7 +5,7 @@ import me.captainbern.animationlib.event.BlockAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
 import me.captainbern.animationlib.utils.EntityUtil;
-import me.captainbern.animationlib.utils.wrappers.RandGen;
+import me.captainbern.animationlib.utils.RandGen;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
