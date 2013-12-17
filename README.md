@@ -53,7 +53,7 @@ want to listen for incoming or outgoing packets then you should get ProtocolLib.
 
 If you want to use my protocol framework then you can just do:
 ```java
-Packet packet = new Packet(PacketType.<TYPE HERE>);
+Packet packet = new Packet(PacketType.<Protocol Type>.<Sender>.<Type>);
 
 //to set fields in the packet you can use:
 packet.write(index, value);
