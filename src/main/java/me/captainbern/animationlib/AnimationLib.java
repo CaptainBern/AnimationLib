@@ -44,7 +44,7 @@ public class AnimationLib extends JavaPlugin {
             BlockCommandSender bCmdSender = (BlockCommandSender) sender;
             sBlock = bCmdSender.getBlock();
 
-            LOGGER.log(Level.INFO, "CommandBlock at {0}, {1}, {2} issued BackPacks++ command: /{3}", new Object[]
+            LOGGER.log(Level.INFO, "CommandBlock at {0}, {1}, {2} issued AnimationLib (debug) command: /{3}", new Object[]
                     {
                             sBlock.getX(), sBlock.getY(), sBlock.getZ(), command.getName()
                     });
