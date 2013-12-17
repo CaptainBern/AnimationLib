@@ -1,131 +1,224 @@
 package me.captainbern.animationlib.protocol;
 
 import me.captainbern.animationlib.reflection.ClassTemplate;
-import me.captainbern.animationlib.reflection.NMSClassTemplate;
-import me.captainbern.animationlib.reflection.SafeField;
-import me.captainbern.animationlib.utils.refs.Protocol;
+import me.captainbern.animationlib.utils.refs.EnumProtocolRef;
 
-import java.util.List;
+public class PacketType {
 
-public enum PacketType {
+    public static final int UNKNOWN_PACKET = -1;
 
-    /**
-     * Update to MC 1.7.2
-     */
+    public static class HANDSHAKE {
+        private static final Protocol PROTOCOL = Protocol.HANDSHAKE;
 
-    UNKNOWN(-1),
-    KEEP_ALIVE(0),
-    LOGIN(1),
-    CHAT(2),
-    UPDATE_TIME(3),
-    ENTITY_EQUIPMENT(4),
-    SPAWN_POSITION(5),
-    UPDATE_HEALTH(6),
-    RESPAWN(7),
-    PLAYER_POSITON(8),
-    HELD_ITEM_SLOT(9),
-    BED(10),
-    ANIMATION(11),
-    NAMED_ENTITY_SPAWN(12),
-    COLLECT(13),
-    SPAWN_ENTITY(14),
-    SPAWN_ENTITY_LIVING(15),
-    SPAWN_ENTITY_PAINTING(16),
-    SPAWN_ENTITY_EXPERIENCE_ORB(17),
-    ENTITY_VELOCITY(18),
-    DESTROY_ENTITY(19),
-    ENTITY(20),
-    REL_ENTITY_MOVE(21),
-    ENTITY_LOOK(22),
-    REL_ENTITY_MOVE_LOOK(23),
-    ENTITY_TELEPORT(24),
-    ENTITY_HEAD_ROTATION(25),
-    ENTITY_STATUS(26),
-    ATTACH_ENTITY(27),
-    ENTITY_METADATA(28),
-    ENTITY_EFFECT(29),
-    REMOVE_ENTITY_EFFECT(30),
-    SET_EXPIERINCE(31),
-    UPDATE_ATTRIBUTES(32),
-    MAP_CHUNK(33),
-    MULTI_BLOCK_CHANGE(34),
-    BLOCK_CHANGE(35),
-    BLOCK_ACTION(36),
-    BLOCK_BREAK_ANIMATION(37),
-    MAP_CHUNK_BULK(38),
-    EXPLOSION(39),
-    WORLD_EVENT(40),
-    NAMED_SOUND_EFFECT(41),
-    WORLD_PARTICLES(42),
-    CHANGE_GAME_STATE(43),
-    WEATHER(44), /** b(44, PacketPlayOutSpawnEntityWeather.class); */
-    OPEN_WINDOW(45),
-    CLOSE_WINDOW(46),
-    SET_SLOT(47),
-    WINDOW_ITEMS(48),
-    CRAFT_PROGRESS_BAR(49),
-    TRANSACTION(50),
-    UPDATE_SIGN(51),
-    MAP(52), /** MAP_CHUNK_BULK ? */
-    TILE_ENTITY_DATA(53),
-    OPEN_SIGN_EDIT(54), /** b(54, PacketPlayOutOpenSignEditor.class); */
-    STATISTIC(55),
-    PLAYER_INFO(56),
-    ABILITIES(57),
-    TAB_COMPLETE(58),
-    SCOREBOARD_OBJECTIVE(59),
-    UPDATE_SCORE(60),
-    DISPLAY_SCOREBOARD(61),
-    TEAMS(62),
-    /**	b(59, PacketPlayOutScoreboardObjective.class);
-     b(60, PacketPlayOutScoreboardScore.class);
-     b(61, PacketPlayOutScoreboardDisplayObjective.class);
-     b(62, PacketPlayOutScoreboardTeam.class); */
-    CUSTOM_PAYLOAD(63),
-    KICK_DISCONNECT(64);
+        public static class Client {
+            private static final Sender SENDER = Sender.CLIENT;
 
+            public static final PacketType SET_PROTOCOL = new PacketType(PROTOCOL, SENDER, 0);
+
+            private Client() {}
+        }
+
+        public static class Server {
+            private static final Sender SENDER = Sender.SERVER;
+
+            public static final PacketType KEEP_ALIVE = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType LOGIN = new PacketType(PROTOCOL, SENDER, 1);
+            public static final PacketType CHAT = new PacketType(PROTOCOL, SENDER, 2);
+            public static final PacketType UPDATE_TIME = new PacketType(PROTOCOL, SENDER, 3);
+            public static final PacketType ENTITY_EQUIPMENT = new PacketType(PROTOCOL, SENDER, 4);
+            public static final PacketType SPAWN_POSITION = new PacketType(PROTOCOL, SENDER, 5);
+            public static final PacketType UPDATE_HEALTH = new PacketType(PROTOCOL, SENDER, 6);
+
+            private Server() {}
+        }
+    }
+
+    public static class PLAY {
+
+        private static final Protocol PROTOCOL = Protocol.PLAY;
+
+        public static class Client {
+            private static final Sender SENDER = Sender.CLIENT;
+
+            public static final PacketType KEEP_ALIVE = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType CHAT = new PacketType(PROTOCOL, SENDER, 1);
+            public static final PacketType USE_ENTITY = new PacketType(PROTOCOL, SENDER, 2);
+            public static final PacketType FLYING = new PacketType(PROTOCOL, SENDER, 3);
+            public static final PacketType POSITION = new PacketType(PROTOCOL, SENDER, 4);
+            public static final PacketType LOOK = new PacketType(PROTOCOL, SENDER, 5);
+            public static final PacketType POSITION_LOOK = new PacketType(PROTOCOL, SENDER, 6);
+            public static final PacketType BLOCK_DIG = new PacketType(PROTOCOL, SENDER, 7);
+            public static final PacketType BLOCK_PLACE = new PacketType(PROTOCOL, SENDER, 8);
+            public static final PacketType HELDITEM = new PacketType(PROTOCOL, SENDER, 9);
+            public static final PacketType ANIMATION = new PacketType(PROTOCOL, SENDER, 10);
+            public static final PacketType ENTITY_ACTION = new PacketType(PROTOCOL, SENDER, 11);
+            public static final PacketType STEER_VEHICLE = new PacketType(PROTOCOL, SENDER, 12);
+            public static final PacketType CLOSE_WINDOW = new PacketType(PROTOCOL, SENDER, 13);
+            public static final PacketType WINDOW_CLICK = new PacketType(PROTOCOL, SENDER, 14);
+            public static final PacketType TRANSACTION = new PacketType(PROTOCOL, SENDER, 15);
+            public static final PacketType SET_CREATIVE_SLOT = new PacketType(PROTOCOL, SENDER, 16);
+            public static final PacketType ENCHANT_ITEM = new PacketType(PROTOCOL, SENDER, 17);
+            public static final PacketType UPDATE_SIGN = new PacketType(PROTOCOL, SENDER, 18);
+            public static final PacketType ABILITIES = new PacketType(PROTOCOL, SENDER, 19);
+            public static final PacketType TAB_COMPLETE = new PacketType(PROTOCOL, SENDER, 20);
+            public static final PacketType CLIENT_SETTINGS = new PacketType(PROTOCOL, SENDER, 21);
+            public static final PacketType CLIENT_COMMAND = new PacketType(PROTOCOL, SENDER, 22);
+            public static final PacketType CUSTOM_PAYLOAD = new PacketType(PROTOCOL, SENDER, 23);
+
+            private Client() {}
+        }
+
+        public static class Server {
+            private static final Sender SENDER = Sender.SERVER;
+
+            public static final PacketType KEEP_ALIVE = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType LOGIN = new PacketType(PROTOCOL, SENDER, 1);
+            public static final PacketType CHAT = new PacketType(PROTOCOL, SENDER, 2);
+            public static final PacketType UPDATE_TIME = new PacketType(PROTOCOL, SENDER, 3);
+            public static final PacketType ENTITY_EQUIPMENT = new PacketType(PROTOCOL, SENDER, 4);
+            public static final PacketType SPAWN_POSITION = new PacketType(PROTOCOL, SENDER, 5);
+            public static final PacketType UPDATE_HEALTH = new PacketType(PROTOCOL, SENDER, 6);
+            public static final PacketType RESPAWN = new PacketType(PROTOCOL, SENDER, 7);
+            public static final PacketType POSITION = new PacketType(PROTOCOL, SENDER, 8);
+            public static final PacketType HELD_ITEM_SLOT = new PacketType(PROTOCOL, SENDER, 9);
+            public static final PacketType BED = new PacketType(PROTOCOL, SENDER, 10);
+            public static final PacketType ANIMATION = new PacketType(PROTOCOL, SENDER, 11);
+            public static final PacketType NAMED_ENTITY_SPAWN = new PacketType(PROTOCOL, SENDER, 12);
+            public static final PacketType COLLECT = new PacketType(PROTOCOL, SENDER, 13);
+            public static final PacketType SPAWN_ENTITY = new PacketType(PROTOCOL, SENDER, 14);
+            public static final PacketType SPAWN_ENTITY_LIVING = new PacketType(PROTOCOL, SENDER, 15);
+            public static final PacketType SPAWN_ENTITY_PAINTING = new PacketType(PROTOCOL, SENDER, 16);
+            public static final PacketType SPAWN_ENTITY_EXPERIENCE_ORB = new PacketType(PROTOCOL, SENDER, 17);
+            public static final PacketType ENTITY_VELOCITY = new PacketType(PROTOCOL, SENDER, 18);
+            public static final PacketType ENTITY_DESTROY = new PacketType(PROTOCOL, SENDER, 19);
+            public static final PacketType ENTITY = new PacketType(PROTOCOL, SENDER, 20);
+            public static final PacketType REL_ENTITY_MOVE = new PacketType(PROTOCOL, SENDER, 21);
+            public static final PacketType REL_ENTITY_LOOK = new PacketType(PROTOCOL, SENDER, 22);
+            public static final PacketType REL_ENTITY_MOVE_LOOK = new PacketType(PROTOCOL, SENDER, 23);
+            public static final PacketType ENTITY_TELEPORT = new PacketType(PROTOCOL, SENDER, 24);
+            public static final PacketType ENTITY_HEAD_ROTATION = new PacketType(PROTOCOL, SENDER, 25);
+            public static final PacketType ETITY_STATUS = new PacketType(PROTOCOL, SENDER, 26);
+            public static final PacketType ATTACH_ENTITY = new PacketType(PROTOCOL, SENDER, 27);
+            public static final PacketType ENTITY_METADATA = new PacketType(PROTOCOL, SENDER, 28);
+            public static final PacketType ENTITY_EFFECT = new PacketType(PROTOCOL, SENDER, 29);
+            public static final PacketType REMOVE_ENTITY_EFFECT = new PacketType(PROTOCOL, SENDER, 30);
+            public static final PacketType SET_EXPERIENCE = new PacketType(PROTOCOL, SENDER, 31);
+            public static final PacketType UPDATE_ATTRIBUTES = new PacketType(PROTOCOL, SENDER, 32);
+            public static final PacketType MAP_CHUNK = new PacketType(PROTOCOL, SENDER, 33);
+            public static final PacketType MULTI_BLOCK_CHANGE = new PacketType(PROTOCOL, SENDER, 34);
+            public static final PacketType BLOCK_CHANGE = new PacketType(PROTOCOL, SENDER, 35);
+            public static final PacketType BLOCK_ACTION = new PacketType(PROTOCOL, SENDER, 36);
+            public static final PacketType BLOCK_BREAK_ANIMATION = new PacketType(PROTOCOL, SENDER, 37);
+            public static final PacketType MAP_CHUNK_BULK = new PacketType(PROTOCOL, SENDER, 38);
+            public static final PacketType EXPLOSION = new PacketType(PROTOCOL, SENDER, 39);
+            public static final PacketType WORLD_EVENT = new PacketType(PROTOCOL, SENDER, 40);
+            public static final PacketType NAMED_SOUND_EFFECT = new PacketType(PROTOCOL, SENDER, 41);
+            public static final PacketType WORLD_PARTICLES = new PacketType(PROTOCOL, SENDER, 42);
+            public static final PacketType CHANGE_GAMESTATE = new PacketType(PROTOCOL, SENDER, 43);
+            public static final PacketType SPAWN_ENTITY_WEATHER = new PacketType(PROTOCOL, SENDER, 44);
+            public static final PacketType OPEN_WINDOW = new PacketType(PROTOCOL, SENDER, 45);
+            public static final PacketType CLOSE_WINDOW = new PacketType(PROTOCOL, SENDER, 46);
+            public static final PacketType SET_SLOT = new PacketType(PROTOCOL, SENDER, 47);
+            public static final PacketType WINDOW_ITEMS = new PacketType(PROTOCOL, SENDER, 48);
+            public static final PacketType CRAFT_PROGRESS_BAR = new PacketType(PROTOCOL, SENDER, 49);
+            public static final PacketType TRANSACTION = new PacketType(PROTOCOL, SENDER, 50);
+            public static final PacketType UPDATE_SIGN = new PacketType(PROTOCOL, SENDER, 51);
+            public static final PacketType MAP = new PacketType(PROTOCOL, SENDER, 52);
+            public static final PacketType OPEN_TILE_ENTITY_DATA = new PacketType(PROTOCOL, SENDER, 53);
+            public static final PacketType OPEN_SIGN_EDITOR = new PacketType(PROTOCOL, SENDER, 54);
+            public static final PacketType STATISTIC = new PacketType(PROTOCOL, SENDER, 55);
+            public static final PacketType PLAYER_INFO = new PacketType(PROTOCOL, SENDER, 56);
+            public static final PacketType PLAYER_ABILITIES = new PacketType(PROTOCOL, SENDER, 57);
+            public static final PacketType TAB_COMPLETE = new PacketType(PROTOCOL, SENDER, 58);
+            public static final PacketType SCOREBOARD_OBJECTIVE = new PacketType(PROTOCOL, SENDER, 59);
+            public static final PacketType SCOREBOARD_SCORE = new PacketType(PROTOCOL, SENDER, 60);
+            public static final PacketType SCOREBOARD_DISPLAY_SCORE = new PacketType(PROTOCOL, SENDER, 61);
+            public static final PacketType SCOREBOARD_TEAM = new PacketType(PROTOCOL, SENDER, 62);
+            public static final PacketType CUSTOM_PAYLOAD = new PacketType(PROTOCOL, SENDER, 63);
+            public static final PacketType KICK_DISCONNECT = new PacketType(PROTOCOL, SENDER, 64);
+
+            private Server() {}
+        }
+    }
+
+    public static class STATUS {
+
+        private static final Protocol PROTOCOL = Protocol.STATUS;
+
+        public static class Client {
+            private static final Sender SENDER = Sender.CLIENT;
+
+            public static final PacketType START = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType PING = new PacketType(PROTOCOL, SENDER, 1);
+
+            private Client() {}
+        }
+
+        public static class Server {
+            private static final Sender SENDER = Sender.SERVER;
+
+            public static final PacketType SERVER_INFO = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType PONG = new PacketType(PROTOCOL, SENDER, 1);
+
+            private Server() {}
+        }
+    }
+
+    public static class LOGIN {
+
+        private static final Protocol PROTOCOL = Protocol.LOGIN;
+
+        public static class Client {
+            private static final Sender SENDER = Sender.CLIENT;
+
+            public static final PacketType LOGIN_START = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType ENCRYPTION_BEGIN = new PacketType(PROTOCOL, SENDER, 1);
+
+            private Client() {}
+        }
+
+        public static class Server {
+            private static final Sender SENDER = Sender.SERVER;
+
+            public static final PacketType DISCONNECT = new PacketType(PROTOCOL, SENDER, 0);
+            public static final PacketType ENCRYPTION_BEGIN = new PacketType(PROTOCOL, SENDER, 1);
+            public static final PacketType ENCRYPTION_SUCCESS = new PacketType(PROTOCOL, SENDER, 2);
+
+            private Server() {}
+        }
+    }
+
+    private Protocol protocol;
+    private Sender sender;
     private int id;
-    private ClassTemplate<?> packetTemplate;
-    private final String[] fieldNames;
 
-    private PacketType(int id){
+    private ClassTemplate packetClass;
 
+    public PacketType(Protocol protocol, Sender sender, int id) {
+        this.protocol = protocol;
+        this.sender = sender;
         this.id = id;
-        Class<?> type = (Class<?>) Protocol.getServerPacketRegistry().get(id);
 
-        if(type == null){
-            this.packetTemplate = null;
-            this.fieldNames = new String[0];
-            return;
-        }
-
-        this.packetTemplate = NMSClassTemplate.create(type);
-
-        List<SafeField<?>> fields = this.packetTemplate.getFields();
-        this.fieldNames = new String[fields.size()];
-        for(int i = 0; i < fields.size(); i++){
-            SafeField<?> field = fields.get(i);
-            this.fieldNames[i] = field.getName();
-        }
+        this.packetClass = new ClassTemplate(EnumProtocolRef.getPacket(protocol, sender, id));
     }
 
-    public Object getPacket(){
-        if(this.packetTemplate == null){
-            return null;
-        }               else{
-            return this.packetTemplate.newInstance();
-        }
+    public Protocol getProtocol() {
+        return protocol;
     }
 
-    public String getField(int index) {
-        return (index >= 0 && index < fieldNames.length) ? fieldNames[index] : null;
+    public Sender getSender() {
+        return sender;
     }
 
-    public ClassTemplate<?> getPacketTemplate(){
-        return this.packetTemplate;
+    public int getId() {
+        return id;
     }
 
-    public int getId(){
-        return this.id;
+    public Class<?> getPacketClass() {
+        return packetClass.getType();
+    }
+
+    public ClassTemplate getPacketClassAsTemplate() {
+        return packetClass;
     }
 }

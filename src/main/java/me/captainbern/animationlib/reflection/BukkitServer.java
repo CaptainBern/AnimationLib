@@ -23,11 +23,11 @@ public class BukkitServer {
         }
     }
 
-    public static Class<?> getNMSClass(String className){
+    public static Class getNMSClass(String className){
         return getClass(BukkitServer.NMS_ROOT + "." + className);
     }
 
-    public static Class<?> getCBClass(String className){
+    public static Class getCBClass(String className){
         return getClass(BukkitServer.CB_ROOT + "." + className);
     }
 }

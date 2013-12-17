@@ -27,7 +27,7 @@ public enum BlockAnimation {
                     throw new NumberFormatException("Damage needs to be between 0 and 9!");
                 }
 
-                Packet packet = new Packet(PacketType.BLOCK_BREAK_ANIMATION);
+                Packet packet = new Packet(PacketType.PLAY.Server.BLOCK_BREAK_ANIMATION);
                 packet.write("a", RandGen.nextInt());
                 packet.write("b", block.getX());
                 packet.write("c", block.getY());
@@ -37,7 +37,7 @@ public enum BlockAnimation {
                 sendPacketNearby(block.getLocation(), Arrays.asList(packet), this, block);
 
             }catch(Exception e){
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
                 e.printStackTrace();
             }
         }
@@ -66,6 +66,6 @@ public enum BlockAnimation {
     }
 
     protected void broadcastAnimation(Block block, short damage){
-        throw new UnsupportedOperationException(AnimationLib.LOG_PREFIX + "Unimplemented animation");
+        throw new UnsupportedOperationException("Unimplemented animation");
     }
 }

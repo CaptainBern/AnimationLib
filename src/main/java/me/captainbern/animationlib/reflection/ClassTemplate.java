@@ -51,7 +51,7 @@ public class ClassTemplate<T> {
 
     public T newInstance(){
         if(this.type == null){
-            throw new IllegalStateException(AnimationLib.LOG_PREFIX + "Class not set.");
+            throw new IllegalStateException("Class not set.");
         }
 
         try {

@@ -22,14 +22,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ANIMATION);
+                Packet packet = new Packet(PacketType.PLAY.Server.ANIMATION);
                 packet.write("a", player.getEntityId());
                 packet.write("b", 0);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -39,14 +39,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ANIMATION);
+                Packet packet = new Packet(PacketType.PLAY.Server.ANIMATION);
                 packet.write("a", player.getEntityId());
                 packet.write("b", 1);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -56,14 +56,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ANIMATION);
+                Packet packet = new Packet(PacketType.PLAY.Server.ANIMATION);
                 packet.write("a", player.getEntityId());
                 packet.write("b", 4);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -73,14 +73,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ANIMATION);
+                Packet packet = new Packet(PacketType.PLAY.Server.ANIMATION);
                 packet.write("a", player.getEntityId());
                 packet.write("b", 5);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -90,7 +90,7 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.UPDATE_HEALTH);
+                Packet packet = new Packet(PacketType.PLAY.Server.UPDATE_HEALTH);
                 packet.write("a", 0);
                 packet.write("b", 0);
                 packet.write("c", 0);
@@ -98,7 +98,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -108,7 +108,7 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.BED);
+                Packet packet = new Packet(PacketType.PLAY.Server.BED);
                 packet.write("a", player.getEntityId());
                 packet.write("b", player.getLocation().getBlockX());
                 packet.write("c", player.getLocation().getBlockY());
@@ -117,7 +117,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
 
@@ -128,14 +128,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ANIMATION);
+                Packet packet = new Packet(PacketType.PLAY.Server.ANIMATION);
                 packet.write("a", player.getEntityId());
                 packet.write("b", 2);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -145,14 +145,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 2);
                 //packet.write("c", null);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, player);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -162,14 +162,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 1);
                 //packet.write("c", null);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, player);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -179,14 +179,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 4);
                 //packet.write("b", null);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -196,7 +196,7 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ATTACH_ENTITY);
+                Packet packet = new Packet(PacketType.PLAY.Server.ATTACH_ENTITY);
                 packet.write("a", 0); //leash present or not?
                 packet.write("b", player.getEntityId());
                 packet.write("c", player.getEntityId());
@@ -204,7 +204,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -220,7 +220,7 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ENTITY_METADATA);
+                Packet packet = new Packet(PacketType.PLAY.Server.ENTITY_METADATA);
                 packet.write("a", player.getEntityId());
 
                 DataWatcher watcher = new DataWatcher(player);
@@ -233,7 +233,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -243,7 +243,7 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ENTITY_METADATA);
+                Packet packet = new Packet(PacketType.PLAY.Server.ENTITY_METADATA);
                 packet.write("a", player.getEntityId());
 
                 DataWatcher watcher = new DataWatcher(player);
@@ -256,7 +256,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -266,7 +266,7 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.ENTITY_METADATA);
+                Packet packet = new Packet(PacketType.PLAY.Server.ENTITY_METADATA);
                 packet.write("a", player.getEntityId());
 
                 DataWatcher watcher = new DataWatcher(player);
@@ -279,7 +279,7 @@ public enum PlayerAnimation {
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + "), this girl isn't on fire!");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + "), this girl isn't on fire!");
                 e.printStackTrace();
             }
         }
@@ -289,14 +289,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 5);
                 packet.write("c", 0);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -306,14 +306,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 5);
                 packet.write("c", 101);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -323,14 +323,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 5);
                 packet.write("c", 102);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -340,14 +340,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 5);
                 packet.write("c", 103);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -357,14 +357,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 7);
                 packet.write("c", 1);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -374,14 +374,14 @@ public enum PlayerAnimation {
         protected void broadcastAnimation(Player player) {
             try {
 
-                Packet packet = new Packet(PacketType.CHANGE_GAME_STATE);
+                Packet packet = new Packet(PacketType.PLAY.Server.CHANGE_GAMESTATE);
                 packet.write("b", 7);
                 packet.write("c", 0);
 
                 sendPacketNearby(player.getLocation(), Arrays.asList(packet), this, null);
 
             } catch (Exception e) {
-                Bukkit.getLogger().warning(AnimationLib.LOG_PREFIX + "Something went wrong while crafting the packet!" + "(" + this + ")");
+                AnimationLib.LOGGER.warning("Something went wrong while crafting the packet!" + "(" + this + ")");
                 e.printStackTrace();
             }
         }
@@ -420,6 +420,6 @@ public enum PlayerAnimation {
     }
 
     protected void broadcastAnimation(Player player){
-        throw new UnsupportedOperationException(AnimationLib.LOG_PREFIX + "Unimplemented animation");
+        throw new UnsupportedOperationException("Unimplemented animation");
     }
 }

@@ -1,4 +1,4 @@
-package me.captainbern.animationlib.utils.wrappers;
+package me.captainbern.animationlib.utils;
 
 import java.util.Random;
 
