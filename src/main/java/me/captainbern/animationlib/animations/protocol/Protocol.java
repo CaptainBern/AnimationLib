@@ -1,6 +1,6 @@
 package me.captainbern.animationlib.animations.protocol;
 
-import com.captainbern.npclib.reflection.ReflectionUtil;
+import me.captainbern.animationlib.reflection.NMSClassTemplate;
 
 public enum Protocol {
 
@@ -13,10 +13,10 @@ public enum Protocol {
 
     public Object toVanilla() {
         switch (this) {
-            case HANDSHAKE : return Enum.valueOf(ReflectionUtil.getNMSClass("EnumProtocol"), "HANDSHAKING");
-            case PLAY : return Enum.valueOf(ReflectionUtil.getNMSClass("EnumProtocol"), "PLAY");
-            case STATUS : return Enum.valueOf(ReflectionUtil.getNMSClass("EnumProtocol"), "STATUS");
-            case LOGIN : return Enum.valueOf(ReflectionUtil.getNMSClass("EnumProtocol"), "LOGIN");
+            case HANDSHAKE : return Enum.valueOf(NMSClassTemplate.create("EnumProtocol").getType(), "HANDSHAKING");
+            case PLAY : return Enum.valueOf(NMSClassTemplate.create("EnumProtocol").getType(), "PLAY");
+            case STATUS : return Enum.valueOf(NMSClassTemplate.create("EnumProtocol").getType(), "STATUS");
+            case LOGIN : return Enum.valueOf(NMSClassTemplate.create("EnumProtocol").getType(), "LOGIN");
             default : return null;
         }
     }

@@ -1,7 +1,6 @@
 package me.captainbern.animationlib.animations.protocol;
 
 import me.captainbern.animationlib.AnimationLib;
-import me.captainbern.animationlib.protocol.*;
 import me.captainbern.animationlib.reflection.ClassTemplate;
 import me.captainbern.animationlib.reflection.FieldAccessor;
 import me.captainbern.animationlib.reflection.SafeField;
@@ -20,8 +19,8 @@ public class Packet {
     }
 
     public Packet(me.captainbern.animationlib.protocol.PacketType packetType) {
-        this.packetTemplate = packetType.getPacketTemplate();
-        this.handle = packetType.getPacket();
+        this.packetTemplate = packetType.getPacketClassAsTemplate();
+        this.handle = packetType.getPacketClass();
     }
 
     public Packet(Object handle) {
