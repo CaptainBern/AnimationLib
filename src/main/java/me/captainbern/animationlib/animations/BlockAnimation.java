@@ -38,7 +38,6 @@ public enum BlockAnimation {
 
             }catch(Exception e){
                 AnimationLib.LOGGER.warning("Something went wrong while crafting the Packet55BlockBreakAnimation packet! (BLOCK_BREAK)");
-                e.printStackTrace();
             }
         }
     };
