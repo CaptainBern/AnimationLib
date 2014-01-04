@@ -1,5 +1,6 @@
 package me.captainbern.animationlib.utils;
 
+import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.reflection.*;
 import org.bukkit.entity.Entity;
@@ -8,7 +9,7 @@ import org.bukkit.entity.Player;
 public class EntityUtil {
 
     public static void sendPacket(Player player, Packet packet){
-        MethodAccessor<Void> sendPacket = new SafeMethod<Void>(BukkitServer.getNMSClass("PlayerConnection"), "sendPacket", BukkitServer.getNMSClass("Packet"));
+        MethodAccessor<Void> sendPacket = new SafeMethod<Void>(AnimationLib.SERVER.getNMSClass("PlayerConnection"), "sendPacket", AnimationLib.SERVER.getNMSClass("Packet"));
         Object playerConnection = getPlayerConnection(player);
 
         sendPacket.invoke(playerConnection, packet.getHandle());
@@ -20,7 +21,7 @@ public class EntityUtil {
     }
 
     public static Object getPlayerConnection(Player player){
-        FieldAccessor<Object> playerConnection = new SafeField<Object>(BukkitServer.getNMSClass("EntityPlayer"), "playerConnection");
+        FieldAccessor<Object> playerConnection = new SafeField<Object>(AnimationLib.SERVER.getNMSClass("EntityPlayer"), "playerConnection");
         return playerConnection.get(playerToEntityPlayer(player));
     }
 

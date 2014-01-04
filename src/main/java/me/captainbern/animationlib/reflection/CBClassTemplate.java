@@ -15,7 +15,7 @@ public class CBClassTemplate extends ClassTemplate<Object> {
     }
 
     protected void setCBClass(String name){
-        Class clazz = BukkitServer.getCBClass(name);
+        Class clazz = AnimationLib.SERVER.getCBClass(name);
         if(clazz == null){
             AnimationLib.getInstance().getLogger().log(Level.WARNING, "Failed to find a valid class for name = {0}!", name);
         }

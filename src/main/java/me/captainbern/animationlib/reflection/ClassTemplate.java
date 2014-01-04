@@ -77,7 +77,7 @@ public class ClassTemplate<T> {
     }
 
     public static ClassTemplate<?> create(String className){
-        Class clazz = BukkitServer.getClass(className);
+        Class clazz = AnimationLib.SERVER.getClass(className);
 
         if(clazz == null){
             AnimationLib.getInstance().getLogger().log(Level.WARNING, "Failed to find a class for name = {0}!", className);

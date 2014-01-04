@@ -15,7 +15,7 @@ public class NMSClassTemplate extends ClassTemplate {
     }
 
     protected void setNMSClass(String name){
-        Class clazz = BukkitServer.getNMSClass(name);
+        Class clazz = AnimationLib.SERVER.getNMSClass(name);
         if(clazz == null){
             AnimationLib.getInstance().getLogger().log(Level.WARNING, "Failed to find a valid class for name = {0}!", name);
         }

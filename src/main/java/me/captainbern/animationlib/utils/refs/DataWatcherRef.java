@@ -1,6 +1,6 @@
 package me.captainbern.animationlib.utils.refs;
 
-import me.captainbern.animationlib.reflection.BukkitServer;
+import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.reflection.ClassTemplate;
 import me.captainbern.animationlib.reflection.MethodAccessor;
 import me.captainbern.animationlib.reflection.NMSClassTemplate;
@@ -35,6 +35,6 @@ public class DataWatcherRef {
     }
 
     public static Object create(Object handle) {
-        return dataWatcher.getConstructor(BukkitServer.getNMSClass("Entity")).newInstance(handle);
+        return dataWatcher.getConstructor(AnimationLib.SERVER.getNMSClass("Entity")).newInstance(handle);
     }
 }
