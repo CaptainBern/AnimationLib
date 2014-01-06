@@ -20,7 +20,7 @@ Easy! the library was designed to be as lightweight as possible.
 
 To let a player perform a specific animation just do:
 ```java
-PlayerAnimation.SWING_ARM(<player>);
+PlayerAnimation.SWING_ARM.play(<player>);
 ```
 
 This code will make the player swing his arm. The library contains 4 diffrent classes that allow
