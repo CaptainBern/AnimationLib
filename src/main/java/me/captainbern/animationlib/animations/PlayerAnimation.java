@@ -7,7 +7,7 @@ import me.captainbern.animationlib.AnimationLib;
 import me.captainbern.animationlib.event.PlayerAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
-import me.captainbern.animationlib.utils.EntityUtil;
+import me.captainbern.animationlib.utils.PlayerUtil;
 import me.captainbern.animationlib.utils.wrappers.DataWatcher;
 
 import org.bukkit.Bukkit;
@@ -400,7 +400,7 @@ public enum PlayerAnimation {
             Bukkit.getPluginManager().callEvent(event);
             if(!event.isCancelled()) {
                 for(Packet packet : packets){
-                    EntityUtil.sendPacket(playerSendTo, packet);
+                    PlayerUtil.sendPacket(playerSendTo, packet);
                 }
             }
         }else{
@@ -409,10 +409,9 @@ public enum PlayerAnimation {
                     continue;
                 }
                 PlayerAnimationEvent event = new PlayerAnimationEvent(player, pa);
-                Bukkit.getPluginManager().callEvent(event);
-                if(!event.isCancelled()) {
+                if(!AnimationLib.getInstance().callEvent(event).isCancelled()) {
                     for(Packet packet : packets){
-                        EntityUtil.sendPacket(player, packet);
+                        PlayerUtil.sendPacket(player, packet);
                     }
                 }
             }
