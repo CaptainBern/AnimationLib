@@ -1,6 +1,6 @@
 package me.captainbern.animationlib.event;
 
-import me.captainbern.animationlib.animations.MobAnimation;
+import me.captainbern.animationlib.animations.mob.MobAnimation;
 import org.bukkit.entity.Entity;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
