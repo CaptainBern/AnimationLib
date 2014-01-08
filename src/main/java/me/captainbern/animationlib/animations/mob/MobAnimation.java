@@ -1,14 +1,13 @@
-package me.captainbern.animationlib.animations;
+package me.captainbern.animationlib.animations.mob;
 
 import me.captainbern.animationlib.event.MobAnimationEvent;
 import me.captainbern.animationlib.protocol.Packet;
 import me.captainbern.animationlib.protocol.PacketType;
-import me.captainbern.animationlib.utils.EntityUtil;
+import me.captainbern.animationlib.utils.PlayerUtil;
 import me.captainbern.animationlib.utils.wrappers.DataWatcher;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.World;
-import org.bukkit.entity.Bat;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 
@@ -39,7 +38,7 @@ public class MobAnimation {
                 Bukkit.getPluginManager().callEvent(event);
                 if(!event.isCancelled()) {
                     for(Packet packet : packets){
-                        EntityUtil.sendPacket(player, packet);
+                        PlayerUtil.sendPacket(player, packet);
                     }
                 }
             }
@@ -90,7 +89,7 @@ public class MobAnimation {
                 Bukkit.getPluginManager().callEvent(event);
                 if(!event.isCancelled()) {
                     for(Packet packet : packets){
-                        EntityUtil.sendPacket(player, packet);
+                        PlayerUtil.sendPacket(player, packet);
                     }
                 }
             }
