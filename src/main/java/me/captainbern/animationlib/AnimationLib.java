@@ -12,6 +12,7 @@ import org.bukkit.command.BlockCommandSender;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.Event;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -32,7 +33,6 @@ public class AnimationLib extends JavaPlugin {
     public void onEnable(){
         initServer();
         instance = this;
-        getLogger().info("Enabled");
     }
 
     protected void initServer() {
@@ -125,6 +125,12 @@ public class AnimationLib extends JavaPlugin {
         }
         return instance;
     }
+
+    public <T extends Event> T callEvent(T event) {
+        Bukkit.getServer().getPluginManager().callEvent(event);
+        return event;
+    }
+
 
     public String generateServerInfo() {
         StringBuilder builder = new StringBuilder(1000);
