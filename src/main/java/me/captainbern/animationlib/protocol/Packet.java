@@ -10,8 +10,8 @@ import java.util.logging.Level;
 
 public class Packet {
 
-    private ClassTemplate<?> packetTemplate;
-    private Object handle;
+    protected ClassTemplate<?> packetTemplate;
+    protected Object handle;
 
     public Packet(Class<?> packettype) {
         this.packetTemplate = new ClassTemplate(packettype);

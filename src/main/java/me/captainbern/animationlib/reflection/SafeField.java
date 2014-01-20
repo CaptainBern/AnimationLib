@@ -4,7 +4,6 @@ import me.captainbern.animationlib.AnimationLib;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
-import java.util.logging.Level;
 
 public class SafeField<T> implements FieldAccessor<T> {
 
@@ -20,7 +19,7 @@ public class SafeField<T> implements FieldAccessor<T> {
             Field field = coreClass.getDeclaredField(fieldName);
             setField(field);
         } catch (NoSuchFieldException e) {
-            AnimationLib.getInstance().getLogger().log(Level.WARNING, "No such field '{0}'!", fieldName);
+            AnimationLib.LOGGER.warning("Failed to find a matching field with name: " + fieldName);
         }
     }
 
@@ -38,6 +37,11 @@ public class SafeField<T> implements FieldAccessor<T> {
     }
 
     @Override
+    public ClassTemplate getType() {
+        return ClassTemplate.create(field.getClass());
+    }
+
+    @Override
     public boolean set(Object instance, T value) {
         if(!isStatic && instance == null){
             throw new UnsupportedOperationException("Non-static fields require a valid instance passed in!");
@@ -47,7 +51,7 @@ public class SafeField<T> implements FieldAccessor<T> {
             this.field.set(instance, value);
             return true;
         } catch (IllegalAccessException e) {
-            AnimationLib.getInstance().getLogger().log(Level.WARNING, "Failed to access field '{0}'!", this.toString());
+            AnimationLib.LOGGER.warning("Failed to access field: " + toString());
         }
         return false;
     }
@@ -60,9 +64,19 @@ public class SafeField<T> implements FieldAccessor<T> {
         try {
             return (T) this.field.get(instance);
         } catch (IllegalAccessException e) {
-            AnimationLib.getInstance().getLogger().log(Level.WARNING, "Failed to access field '{0}'!", this.toString());
+            AnimationLib.LOGGER.warning("Failed to access field: " + toString());
         }
         return null;
+    }
+
+    @Override
+    public T transfer(Object from, Object to) {
+        if (this.field == null) {
+            return null;
+        }
+        T old = get(to);
+        set(to, get(from));
+        return old;
     }
 
     public String getName(){
@@ -87,6 +101,24 @@ public class SafeField<T> implements FieldAccessor<T> {
         string.append(this.field.getName());
 
         return string.toString();
+    }
+
+    @Override
+    public boolean isPublic() {
+        return Modifier.isPublic(field.getModifiers());
+    }
+
+    @Override
+    public boolean isReadOnly() {
+        return Modifier.isFinal(field.getModifiers());
+    }
+
+    @Override
+    public void setReadOnly(Object target, boolean value) {
+        if(value)
+            set(target, "modifiers", field.getModifiers() | Modifier.FINAL);
+        else
+            set(target, "modifiers", field.getModifiers() & ~Modifier.FINAL);
     }
 
     public static <T> T get(Class<?> clazz, String fieldname) {

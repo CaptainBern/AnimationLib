@@ -31,14 +31,14 @@ public class Commandblockanimation extends AnimationLibCommand{
 
         if(info.getArgs().length == 1) {
             if(info.getArgs()[0].equalsIgnoreCase("help")) {
-                sender.sendMessage("All possible player animations are: ");
+                sender.sendMessage("All possible block animations are: ");
 
                 StringBuilder builder = new StringBuilder(1000);
                 for(BlockAnimation type : BlockAnimation.values()) {
                     builder.append(type.name() + ", ");
                 }
 
-                String types = builder.substring(0, builder.length() - 2);
+                String types = builder.substring(0, builder.length() - 2); //remove the ', '
 
                 sender.sendMessage(types);
                 return;

@@ -133,7 +133,7 @@ public class AnimationLib extends JavaPlugin {
 
 
     public String generateServerInfo() {
-        StringBuilder builder = new StringBuilder(1000);
+        StringBuilder builder = new StringBuilder(500);
         builder.append("Identified server brand: " + AnimationLib.SERVER.getName() + "\n");
         builder.append("Detected MC version: " + AnimationLib.SERVER.getVersion() + "\n");
         builder.append("Supported MC version: " + AnimationLib.SUPPORTED_VERSION_NUMERIC + "\n");

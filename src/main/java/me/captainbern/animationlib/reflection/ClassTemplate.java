@@ -7,7 +7,6 @@ import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.logging.Level;
 
 public class ClassTemplate<T> {
 
@@ -32,6 +31,14 @@ public class ClassTemplate<T> {
             fields = populateFieldList(new ArrayList<SafeField<?>>(), type);
         }
         return Collections.unmodifiableList(fields);
+    }
+
+    public SafeField<?> getFieldAt(int index) {
+        List<SafeField<?>> fields = getFields();
+        if (index < 0 || index >= fields.size()) {
+            throw new IllegalArgumentException("No field exists at index " + index);
+        }
+        return fields.get(index);
     }
 
     private static List<SafeField<?>> populateFieldList(List<SafeField<?>> fields, Class<?> clazz) {
@@ -70,7 +77,7 @@ public class ClassTemplate<T> {
 
     public static ClassTemplate<?> create(Class<?> type){
         if(type == null){
-            AnimationLib.getInstance().getLogger().log(Level.WARNING, "Cannot create a ClassTemplate with null!");
+            AnimationLib.LOGGER.warning("Cannot create a ClassTemplate with a null type!");
             return null;
         }
         return new ClassTemplate(type);
@@ -80,10 +87,16 @@ public class ClassTemplate<T> {
         Class clazz = AnimationLib.SERVER.getClass(className);
 
         if(clazz == null){
-            AnimationLib.getInstance().getLogger().log(Level.WARNING, "Failed to find a class for name = {0}!", className);
+            AnimationLib.LOGGER.warning("Failed to find a matching class with name: " + className);
             return null;
         }
         return new ClassTemplate<Object>(clazz);
+    }
+
+    public void transfer(Object from, Object to) {
+        for (FieldAccessor<?> field : this.getFields()) {
+            field.transfer(from, to);
+        }
     }
 
     public boolean isAssignableFrom(Class<?> clazz){
@@ -92,6 +105,26 @@ public class ClassTemplate<T> {
 
     public boolean isInstanceOf(Object object){
         return this.getType().isInstance(object);
+    }
+
+    public boolean isType(Object object) {
+        return object != null && isType(object.getClass());
+    }
+
+    public boolean isType(Class<?> clazz) {
+        return clazz != null && this.type.equals(clazz);
+    }
+
+    public <T> T cast(Class<T> clazz) {
+        if(isAssignableFrom(clazz))
+            return (T) getType().asSubclass(clazz);
+        return null;
+    }
+
+    public <T> T cast(Object object) {
+        if(isAssignableFrom(object.getClass()))
+            return (T) getType().cast(object);
+        return null;
     }
 
     public <K> MethodAccessor<K> getMethod(String methodname, Class<?>... params){
@@ -112,5 +145,11 @@ public class ClassTemplate<T> {
 
     public <K> void setStaticFieldValue(String name, K value) {
         SafeField.setStatic(getType(), name, value);
+    }
+
+    // Other stuff, utility thingies
+
+    public <T> T getFields(T fieldType) {
+        return null;
     }
 }
