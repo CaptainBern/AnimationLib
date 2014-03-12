@@ -4,7 +4,7 @@
 
     <groupId>me.captainbern</groupId>
     <artifactId>AnimationLib</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
     <name>AnimationLib</name>
     <url>https://github.com/CaptainBern/AnimationLib.git</url>

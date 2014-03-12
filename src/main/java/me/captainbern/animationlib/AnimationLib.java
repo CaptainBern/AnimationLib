@@ -69,11 +69,11 @@ public class AnimationLib extends JavaPlugin {
         User user = null;
         Block sBlock = null;
 
-        if(sender instanceof Player){
+        if(sender instanceof Player) {
 
             user = new User((Player) sender);
 
-        }else if(sender instanceof BlockCommandSender){
+        } else if(sender instanceof BlockCommandSender){
 
             BlockCommandSender bCmdSender = (BlockCommandSender) sender;
             sBlock = bCmdSender.getBlock();

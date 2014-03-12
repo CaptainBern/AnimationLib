@@ -10,7 +10,6 @@ import org.bukkit.entity.Player;
 public class PlayerUtil {
 
     private static final MethodAccessor<Void> sendPacket = new SafeMethod<Void>(AnimationLib.SERVER.getNMSClass("PlayerConnection"), "sendPacket", AnimationLib.SERVER.getNMSClass("Packet"));
-    private static final MethodAccessor<Object> getHandle = new SafeMethod<Object>(Player.class, "getHandle");
     private static final FieldAccessor<Object> playerConnection = new SafeField<Object>(AnimationLib.SERVER.getNMSClass("EntityPlayer"), "playerConnection");
     private static final FieldAccessor<Object> networkManager = new SafeField<Object>(AnimationLib.SERVER.getNMSClass("PlayerConnection"), "networkManager");
     private static final FieldAccessor<Channel> channelField = new SafeField<Channel>(AnimationLib.SERVER.getNMSClass("NetworkManager"), "k");
@@ -22,6 +21,7 @@ public class PlayerUtil {
     }
 
     public static Object playerToEntityPlayer(Player player) {
+        MethodAccessor<Object> getHandle = new SafeMethod<Object>(player.getClass(), "getHandle");
         return getHandle.invoke(player);
     }
 
